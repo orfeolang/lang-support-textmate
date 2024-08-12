@@ -10,7 +10,7 @@
 	],
 	"repository": {
 		"comment-single-line": {
-			"name": "comment.line.orfeo",
+			"name": "comment.line.number-sign.orfeo",
 			"begin": "(#\\s)|##",
 			"end": "$"
 		},
