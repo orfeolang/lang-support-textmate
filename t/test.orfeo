@@ -7,6 +7,12 @@
   Everything below must be colored.
 -------------------------------------------------------------------- )
 
+    # Single line comments.
+# From start of line.
+word # After start.
+## Double hashing.
+word ## Double Hashing.
+
     # Parentheses
 (
 )

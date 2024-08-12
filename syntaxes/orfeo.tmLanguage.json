@@ -10,7 +10,7 @@
 	"repository": {
 		"comment-single-line": {
 			"name": "comment.line.orfeo",
-			"begin": "#\\s",
+			"begin": "(#\\s)|##",
 			"end": "$"
 		},
 		"note-container": {
