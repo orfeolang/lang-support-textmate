@@ -3,6 +3,7 @@
   "displayName": "Orfeo",
   "description": "Syntax Highlight for the Orfeo programming language.",
   "version": "0.1.0",
+  "publisher": "Orfeo",
   "engines": {
     "vscode": "^1.92.0"
   },
