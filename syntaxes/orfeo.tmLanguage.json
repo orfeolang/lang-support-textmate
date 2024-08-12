@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Orfeo",
+	"patterns": [
+		{ "include": "#comment-single-line" },
+		{ "include": "#note-container" }
+	],
+	"repository": {
+		"comment-single-line": {
+			"name": "comment.line.orfeo",
+			"begin": "#\\s",
+			"end": "$"
+		},
+		"note-container": {
+			"name": "string.quoted.double.orfeo",
+			"begin": "<",
+			"end": ">"
+		}
+	},
+	"scopeName": "source.orfeo"
+}

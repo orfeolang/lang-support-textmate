@@ -1,0 +1,24 @@
+{
+  "name": "orfeo",
+  "displayName": "Orfeo",
+  "description": "Syntax Highlight for the Orfeo programming language.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "Orfeo",
+      "extensions": [".orfeo"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "Orfeo",
+      "scopeName": "source.orfeo",
+      "path": "./syntaxes/orfeo.tmLanguage.json"
+    }]
+  }
+}

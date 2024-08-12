@@ -1,0 +1,33 @@
+# Orfeo Syntax Highlighter Tests
+# v0.2.0
+# Copyright 2024 Pierre-Emmanuel Lévesque
+
+#( -------------------------------------------------------------------
+  Passers
+  Everything below must be colored.
+-------------------------------------------------------------------- )
+
+    # Parentheses
+(
+)
+()
+(())
+(() ())
+
+    # Music Expression Duration
+=f
+=flex
+=4
+=4.4
+=42.42
+=4/4
+=4.4/4.4
+=42.42/42.42
+
+    # Note Container
+
+    # Do we have nesting here????
+<a>
+<a b c>
+<Hi "bye" 89.9>
+< [figure] 89, a >
