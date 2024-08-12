@@ -34,16 +34,14 @@
 @word-9
 @A'
 
-    # Note Container
-
-    # Do we have nesting here????
+    # Note Container (nesting is not supported in Orfeo 0.2.0)
 <a>
 <a b c>
+<()>
 <Hi "bye" 89.9>
 < [figure] 89, a >
 
     # Backtick Note
-
 `abc
 `#abc😎.9
 `abc(
