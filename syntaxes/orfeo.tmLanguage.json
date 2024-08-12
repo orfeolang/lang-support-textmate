@@ -3,6 +3,7 @@
 	"name": "Orfeo",
 	"patterns": [
 		{ "include": "#comment-single-line" },
+		{ "include": "#note" },
 		{ "include": "#note-container" },
 		{ "include": "#backtick-note" },
 		{ "include": "#keywords" }
@@ -12,6 +13,10 @@
 			"name": "comment.line.orfeo",
 			"begin": "(#\\s)|##",
 			"end": "$"
+		},
+		"note": {
+			"name": "string.quoted.double.orfeo",
+            "match": "[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿-]([a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'-\\[/\\]♮♭♯,._0-9]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'?\\]♮♭♯,._0-9!])?"
 		},
 		"note-container": {
 			"name": "string.quoted.double.orfeo",

@@ -9,9 +9,9 @@
 
     # Single line comments.
 # From start of line.
-word # After start.
+note # After start.
 ## Double hashing.
-word ## Double Hashing.
+note ## Double Hashing.
 
     # Parentheses
 (
@@ -39,6 +39,16 @@ word ## Double Hashing.
 @word
 @word-9
 @A'
+
+    # Note
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+áéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ
+'
+¡
+¿
+-
+áéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'-[/]♮♭♯,._0123456789
 
     # Note Container (nesting is not supported in Orfeo 0.2.0)
 <a>
