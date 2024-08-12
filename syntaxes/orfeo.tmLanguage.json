@@ -17,6 +17,10 @@
 				{
                     "name": "keyword.control.orfeo",
                     "match": "^\\s*=finish\\s*$"
+                },
+				{
+                    "name": "keyword.control.orfeo",
+                    "match": "@[a-zA-Z0-9'_.-]*[a-zA-Z0-9']+(\\s|$)"
                 }
 			]
 		},
