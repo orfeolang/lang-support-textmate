@@ -24,6 +24,11 @@
 =4.4/4.4
 =42.42/42.42
 
+    # keyword: =finish
+=finish
+    =finish
+        =finish    
+
     # Note Container
 
     # Do we have nesting here????
@@ -31,3 +36,13 @@
 <a b c>
 <Hi "bye" 89.9>
 < [figure] 89, a >
+
+#( -------------------------------------------------------------------
+  Failers
+  Everything below should be uncolored.
+-------------------------------------------------------------------- )
+
+    # keyword: =finish
+word =finish
+=finish word
+word =finish word

@@ -3,6 +3,7 @@
 	"name": "Orfeo",
 	"patterns": [
 		{ "include": "#comment-single-line" },
+		{ "include": "#keywords" },
 		{ "include": "#note-container" }
 	],
 	"repository": {
@@ -10,6 +11,14 @@
 			"name": "comment.line.orfeo",
 			"begin": "#\\s",
 			"end": "$"
+		},
+		"keywords": {
+			"patterns": [
+				{
+                    "name": "keyword.control.orfeo",
+                    "match": "^\\s*=finish\\s*$"
+                }
+			]
 		},
 		"note-container": {
 			"name": "string.quoted.double.orfeo",
