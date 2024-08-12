@@ -15,16 +15,16 @@
 			"end": "$"
 		},
 		"note": {
-			"name": "string.quoted.double.orfeo",
+			"name": "string.unquoted.orfeo",
             "match": "[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿-]([a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'-\\[/\\]♮♭♯,._0-9]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'?\\]♮♭♯,._0-9!])?"
 		},
 		"note-container": {
-			"name": "string.quoted.double.orfeo",
+			"name": "string.quoted.other.orfeo",
 			"begin": "<",
 			"end": ">"
 		},
 		"backtick-note": {
-			"name": "string.quoted.double.orfeo",
+			"name": "string.quoted.other.orfeo",
             "match": "`[^()|\\s$]+"
 		},
 		"keywords": {
