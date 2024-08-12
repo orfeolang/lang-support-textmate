@@ -4,7 +4,8 @@
 	"patterns": [
 		{ "include": "#comment-single-line" },
 		{ "include": "#keywords" },
-		{ "include": "#note-container" }
+		{ "include": "#note-container" },
+		{ "include": "#backtick-note" }
 	],
 	"repository": {
 		"comment-single-line": {
@@ -28,6 +29,10 @@
 			"name": "string.quoted.double.orfeo",
 			"begin": "<",
 			"end": ">"
+		},
+		"backtick-note": {
+			"name": "string.quoted.double.orfeo",
+            "match": "`[^()|\\s$]+"
 		}
 	},
 	"scopeName": "source.orfeo"

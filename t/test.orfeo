@@ -42,6 +42,14 @@
 <Hi "bye" 89.9>
 < [figure] 89, a >
 
+    # Backtick Note
+
+`abc
+`#abc😎.9
+`abc(
+`abc)
+`abc|
+
 #( -------------------------------------------------------------------
   Failers
   Everything below should be uncolored.
@@ -56,3 +64,9 @@ word =finish word
 @word_
 @word-
 @word.
+
+    # Backtick Note
+` `
+`(
+`)
+`|
