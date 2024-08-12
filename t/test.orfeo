@@ -70,9 +70,9 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 -------------------------------------------------------------------- )
 
     # keyword: =finish
-word =finish
-=finish word
-word =finish word
+note =finish
+=finish note
+note =finish note
 
     # keyword: ｢marker｣
 @word_
