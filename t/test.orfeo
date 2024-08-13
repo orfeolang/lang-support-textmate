@@ -7,11 +7,99 @@
   Everything below must be colored.
 -------------------------------------------------------------------- )
 
+    # Block inline comment.
+
+#^..( comment ) note #^..( commwent ) # Why does this fail?
+
+note #(       This is an inline comment. ) note
+note #^(      This is an inline comment. ) note
+note #^^^(    This is an inline comment. ) note
+note #.(      This is an inline comment. ) note
+note #...(    This is an inline comment. ) note
+note #^.(     This is an inline comment. ) note
+note #^^^...( This is an inline comment. ) note
+
+note #<       This is an inline comment. > note
+note #^<      This is an inline comment. > note
+note #^^^<    This is an inline comment. > note
+note #.<      This is an inline comment. > note
+note #...<    This is an inline comment. > note
+note #^.<     This is an inline comment. > note
+note #^^^...< This is an inline comment. > note
+
+note #[       This is an inline comment. ] note
+note #^[      This is an inline comment. ] note
+note #^^^[    This is an inline comment. ] note
+note #.[      This is an inline comment. ] note
+note #...[    This is an inline comment. ] note
+note #^.[     This is an inline comment. ] note
+note #^^^...[ This is an inline comment. ] note
+
+note #{       This is an inline comment. } note
+note #^{      This is an inline comment. } note
+note #^^^{    This is an inline comment. } note
+note #.{      This is an inline comment. } note
+note #...{    This is an inline comment. } note
+note #^.{     This is an inline comment. } note
+note #^^^...{ This is an inline comment. } note
+
+note #«       This is an inline comment. » note
+note #^«      This is an inline comment. » note
+note #^^^«    This is an inline comment. » note
+note #.«      This is an inline comment. » note
+note #...«    This is an inline comment. » note
+note #^.«     This is an inline comment. » note
+note #^^^...« This is an inline comment. » note
+
+note #⦗       This is an inline comment. ⦘ note
+note #^⦗      This is an inline comment. ⦘ note
+note #^^^⦗    This is an inline comment. ⦘ note
+note #.⦗      This is an inline comment. ⦘ note
+note #...⦗    This is an inline comment. ⦘ note
+note #^.⦗     This is an inline comment. ⦘ note
+note #^^^...⦗ This is an inline comment. ⦘ note
+
+note #｢       This is an inline comment. ｣ note
+note #^｢      This is an inline comment. ｣ note
+note #^^^｢    This is an inline comment. ｣ note
+note #.｢      This is an inline comment. ｣ note
+note #...｢    This is an inline comment. ｣ note
+note #^.｢     This is an inline comment. ｣ note
+note #^^^...｢ This is an inline comment. ｣ note
+
+#^^..(
+  This is a multi-line comment!
+)
+
+#^^..<
+  This is a multi-line comment!
+>
+
+#^^..[
+  This is a multi-line comment!
+]
+
+#^^..{
+  This is a multi-line comment!
+}
+
+#^^..«
+  This is a multi-line comment!
+»
+
+#^^..⦗
+  This is a multi-line comment!
+⦘
+
+#^^..｢
+  This is a multi-line comment!
+｣
+
     # Single line comments.
 # From start of line.
 note # After start.
-## Double hashing.
-note ## Double Hashing.
+##Double-hashing.
+note ##Double-Hashing.
 
     # Parentheses
 (

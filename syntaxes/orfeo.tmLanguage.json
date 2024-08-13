@@ -2,17 +2,57 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Orfeo",
 	"patterns": [
-		{ "include": "#comment-single-line" },
+		{ "include": "#comment-block" },
+		{ "include": "#comment-line" },
 		{ "include": "#note" },
 		{ "include": "#note-container" },
 		{ "include": "#backtick-note" },
 		{ "include": "#keywords" }
 	],
 	"repository": {
-		"comment-single-line": {
-			"name": "comment.line.number-sign.orfeo",
-			"begin": "(#\\s)|##",
-			"end": "$"
+		"comment-block": {
+            "patterns": [
+				{
+					"name": "comment.block.orfeo",
+					"begin": "#\\^*.*\\(",
+					"end": "\\)"
+				},
+				{
+					"name": "comment.block.orfeo",
+					"begin": "#\\^*.*<",
+					"end": ">"
+				},
+				{
+					"name": "comment.block.orfeo",
+					"begin": "#\\^*.*\\[",
+					"end": "\\]"
+				},
+				{
+					"name": "comment.block.orfeo",
+					"begin": "#\\^*.*{",
+					"end": "}"
+				},
+				{
+					"name": "comment.block.orfeo",
+					"begin": "#\\^*.*«",
+					"end": "»"
+				},
+				{
+					"name": "comment.block.orfeo",
+					"begin": "#\\^*.*⦗",
+					"end": "⦘"
+				},
+				{
+					"name": "comment.block.orfeo",
+					"begin": "#\\^*.*｢",
+					"end": "｣"
+				}
+			]
+		},
+		"comment-line": {
+            "name": "comment.line.number-sign.orfeo",
+            "begin": "#\\s|##",
+            "end": "$"
 		},
 		"note": {
 			"name": "string.unquoted.orfeo",
