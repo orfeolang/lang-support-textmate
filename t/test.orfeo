@@ -9,6 +9,11 @@
 
     # Block inline comment.
 
+#^..( comment (a b c d) )
+
+#^..( comment (a b (c d)) )
+
+# Note Container (nesting is not supported in Orfeo 0.2.0)
 #^..( comment ) note #^..( commwent ) # Why does this fail?
 
 note #(       This is an inline comment. ) note
@@ -101,6 +106,41 @@ note # After start.
 ##Double-hashing.
 note ##Double-Hashing.
 
+    # Atomic comment.
+
+(#note
+)#note
+ #note(
+ #note)
+(#note)
+# note
+
+^^(note
+^^note
+\^^note
+
+^^4
+^^(
+^^<
+^^`
+^^_
+^^-
+^^...
+^^a
+^^A
+^^z
+^^Z
+^^Ó
+^^'
+^^¡
+^^¿
+
+^^..note
+\^^..note
+...note
+...<note container>
+
+
     # Parentheses
 (
 )
@@ -143,7 +183,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 <a b c>
 <()>
 <Hi "bye" 89.9>
-< [figure] 89, a >
+\< [figure] 89, a >
 
     # Backtick Note
 `abc
@@ -151,6 +191,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 `abc(
 `abc)
 `abc|
+\`abc
 
 #( -------------------------------------------------------------------
   Failers
