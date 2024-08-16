@@ -9,7 +9,8 @@
         { "include": "#note-container" },
         { "include": "#note-backtick" },
         { "include": "#rhythm-flags" },
-        { "include": "#rhythm-dots" }
+        { "include": "#rhythm-dots" },
+        { "include": "#marker" }
     ],
     "repository": {
         "comment-block": {
@@ -62,7 +63,7 @@
         },
         "comment-atomic": {
             "name": "comment.line.number-sign.orfeo",
-            "match": "(?<=[\\^\\s()])#[^\\s()$]*"
+            "match": "(?<=^|[\\s()])#[^\\s()$]*"
         },
         "note-container": {
             "name": "string.quoted.other.orfeo",
@@ -73,12 +74,16 @@
             "match": "(?<=^|[\\s()\\\\\\^\\.\\d])`[^\\s()|$]+"
         },
         "rhythm-flags": {
-            "name": "keyword.other",
+            "name": "keyword.other.orfeo",
             "match": "(?<=^|[\\s()\\\\])\\^+(?=[\\d(<`_\\-\\.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿])"
         },
         "rhythm-dots": {
-            "name": "keyword.other",
+            "name": "keyword.other.orfeo",
             "match": "(?<=^|[\\s()\\\\\\^])\\.+(?=[\\d(<`_\\-\\.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿])"
+        },
+        "marker": {
+            "name": "entity.name.tag.orfeo",
+            "match": "(?<=^|[\\s()])@[a-zA-Z\\d'_.-]*[a-zA-Z\\d'](?=[\\s()$])"
         }
     },
     "scopeName": "source.orfeo"
