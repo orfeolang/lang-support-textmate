@@ -3,14 +3,20 @@
     "name": "Orfeo",
     "patterns": [
         { "include": "#comment-block" },
-        { "include": "#=finish" },
         { "include": "#comment-line" },
         { "include": "#comment-atomic" },
+        { "include": "#=finish" },
         { "include": "#note-container" },
         { "include": "#note-backtick" },
+        { "include": "#metronome" },
+        { "include": "#marker" },
+        { "include": "#invalid-lone-number" },
+        { "include": "#restifier-backslash" },
         { "include": "#rhythm-flags" },
         { "include": "#rhythm-dots" },
-        { "include": "#marker" }
+        { "include": "#repeater-dot" },
+        { "include": "#repeater-dash" },
+        { "include": "#barline" }
     ],
     "repository": {
         "comment-block": {
@@ -52,10 +58,6 @@
                 }
             ]
         },
-        "=finish": {
-            "name": "keyword.control.orfeo",
-            "match": "^\\s*=finish\\s*$"
-        },
         "comment-line": {
             "name": "comment.line.number-sign.orfeo",
             "begin": "#\\s|##",
@@ -65,6 +67,10 @@
             "name": "comment.line.number-sign.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()$]*"
         },
+        "=finish": {
+            "name": "keyword.control.orfeo",
+            "match": "^\\s*=finish\\s*$"
+        },
         "note-container": {
             "name": "string.quoted.other.orfeo",
             "match": "(?<=^|[\\s()\\\\\\^\\.\\d])<[^>]*>(?=[\\s()$])"
@@ -73,17 +79,41 @@
             "name": "string.quoted.other.orfeo",
             "match": "(?<=^|[\\s()\\\\\\^\\.\\d])`[^\\s()|$]+"
         },
+        "metronome": {
+            "name": "variable.parameter.orfeo",
+            "match": "(?<=^|[\\s()])(!|♩)(\\+|-)?[1-9]\\d*(\\.\\d+)?(/[1-9]\\d*(\\.\\d+)?)?(s|seconds|ms|milliseconds)?(?=[\\s()$])"
+        },
+        "marker": {
+            "name": "entity.name.tag.orfeo",
+            "match": "(?<=^|[\\s()])@[a-zA-Z\\d'_.-]*[a-zA-Z\\d'](?=[\\s()$])"
+        },
+        "invalid-lone-number": {
+            "name": "invalid.illegal.orfeo",
+            "match": "(?<=^|[\\s()\\\\\\^\\.])\\d+\\.?\\d*(/\\d+\\.?\\d*)?(?=[\\s()$])"
+        },
+        "restifier-backslash": {
+            "name": "keyword.other.orfeo",
+            "match": "(?<=^|[\\s()])\\\\(?=[\\d(<`_\\-\\^\\.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿])"
+        },
         "rhythm-flags": {
             "name": "keyword.other.orfeo",
             "match": "(?<=^|[\\s()\\\\])\\^+(?=[\\d(<`_\\-\\.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿])"
         },
         "rhythm-dots": {
             "name": "keyword.other.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^])\\.+(?=[\\d(<`_\\-\\.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿])"
+            "match": "(?<=^|[\\s()\\\\\\^])\\.+(?=[\\d(<`_\\-a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ'¡¿])"
         },
-        "marker": {
-            "name": "entity.name.tag.orfeo",
-            "match": "(?<=^|[\\s()])@[a-zA-Z\\d'_.-]*[a-zA-Z\\d'](?=[\\s()$])"
+        "repeater-dot": {
+            "name": "constant.character.orfeo",
+            "match": "(?<=^|[\\s()\\\\])\\.(?=[\\s)$])"
+        },
+        "repeater-dash": {
+            "name": "constant.character.orfeo",
+            "match": "(?<=^|[\\s()\\\\\\^\\.])\\-(?=[\\s()$])"
+        },
+        "barline": {
+            "name": "keyword.other.orfeo",
+            "match": "(?<=^|\\s)\\|(?=[\\s=$])"
         }
     },
     "scopeName": "source.orfeo"
