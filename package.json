@@ -11,15 +11,37 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "Orfeo",
-      "extensions": [".orfeo"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "Orfeo",
-      "scopeName": "source.orfeo",
-      "path": "./syntaxes/orfeo.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "Orfeo",
+        "extensions": [".orfeo"],
+        "configuration": "./vscode/orfeo.language-configuration.json"
+      },
+      {
+        "id": "Orfeoerror",
+        "extensions": [".orfeoerror"]
+      },
+      {
+        "id": "Orfeotest",
+        "extensions": [".orfeotest"]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "Orfeo",
+        "scopeName": "source.orfeo",
+        "path": "./syntaxes/orfeo.tmLanguage.json"
+      },
+      {
+        "language": "Orfeoerror",
+        "scopeName": "source.orfeoerror",
+        "path": "./syntaxes/orfeoerror.tmLanguage.json"
+      },
+      {
+        "language": "Orfeotest",
+        "scopeName": "source.orfeotest",
+        "path": "./syntaxes/orfeotest.tmLanguage.json"
+      }
+    ]
   }
 }
