@@ -1,0 +1,24 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Orfeoerror",
+    "patterns": [
+        { "include": "#header" },
+        { "include": "#line-prompt" },
+        { "include": "#symbol" }
+    ],
+    "repository": {
+        "header": {
+            "name": "entity.name.tag.orfeoerror",
+            "match": "^===OOPS!===(?=\\s)"
+        },
+        "line-prompt": {
+            "name": "entity.name.tag.orfeoerror",
+            "match": "^\\d+➤(?=\\s)"
+        },
+        "symbol": {
+            "name": "entity.name.tag.orfeoerror",
+            "match": "⏏|⭢"
+        }
+    },
+    "scopeName": "source.orfeoerror"
+}
