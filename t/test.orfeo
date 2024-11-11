@@ -3,117 +3,169 @@
 # Copyright 2024 Pierre-Emmanuel Lévesque
 
 #( -------------------------------------------------------------------
-  Passers
+  Passers.
   Everything below must be colored.
 -------------------------------------------------------------------- )
 
     # ----------------------------------------------------------------
-    # Block inline comment.
+    # Block comment.
 
-note #(       This is an inline block comment. ) note
-note #^(      This is an inline block comment. ) note
-note #^^^(    This is an inline block comment. ) note
-note #.(      This is an inline block comment. ) note
-note #...(    This is an inline block comment. ) note
-note #^.(     This is an inline block comment. ) note
-note #^^^...( This is an inline block comment. ) note
+    # Inline block comment.
 
-note #<       This is an inline block comment. > note
-note #^<      This is an inline block comment. > note
-note #^^^<    This is an inline block comment. > note
-note #.<      This is an inline block comment. > note
-note #...<    This is an inline block comment. > note
-note #^.<     This is an inline block comment. > note
-note #^^^...< This is an inline block comment. > note
+note #(        This is an inline block comment. ) note
+note #\(       This is an inline block comment. ) note
+note #^(       This is an inline block comment. ) note
+note #^^^(     This is an inline block comment. ) note
+note #.(       This is an inline block comment. ) note
+note #...(     This is an inline block comment. ) note
+note #\^(      This is an inline block comment. ) note
+note #\^^^(    This is an inline block comment. ) note
+note #\.(      This is an inline block comment. ) note
+note #\...(    This is an inline block comment. ) note
+note #\^.(     This is an inline block comment. ) note
+note #\^^^...( This is an inline block comment. ) note
+note #^.(      This is an inline block comment. ) note
+note #^^^...(  This is an inline block comment. ) note
 
-note #[       This is an inline block comment. ] note
-note #^[      This is an inline block comment. ] note
-note #^^^[    This is an inline block comment. ] note
-note #.[      This is an inline block comment. ] note
-note #...[    This is an inline block comment. ] note
-note #^.[     This is an inline block comment. ] note
-note #^^^...[ This is an inline block comment. ] note
+note #<        This is an inline block comment. > note
+note #\<       This is an inline block comment. > note
+note #^<       This is an inline block comment. > note
+note #^^^<     This is an inline block comment. > note
+note #.<       This is an inline block comment. > note
+note #...<     This is an inline block comment. > note
+note #\^<      This is an inline block comment. > note
+note #\^^^<    This is an inline block comment. > note
+note #\.<      This is an inline block comment. > note
+note #\...<    This is an inline block comment. > note
+note #\^.<     This is an inline block comment. > note
+note #\^^^...< This is an inline block comment. > note
+note #^.<      This is an inline block comment. > note
+note #^^^...<  This is an inline block comment. > note
 
-note #{       This is an inline block comment. } note
-note #^{      This is an inline block comment. } note
-note #^^^{    This is an inline block comment. } note
-note #.{      This is an inline block comment. } note
-note #...{    This is an inline block comment. } note
-note #^.{     This is an inline block comment. } note
-note #^^^...{ This is an inline block comment. } note
+note #[        This is an inline block comment. ] note
+note #\[       This is an inline block comment. ] note
+note #^[       This is an inline block comment. ] note
+note #^^^[     This is an inline block comment. ] note
+note #.[       This is an inline block comment. ] note
+note #...[     This is an inline block comment. ] note
+note #\^[      This is an inline block comment. ] note
+note #\^^^[    This is an inline block comment. ] note
+note #\.[      This is an inline block comment. ] note
+note #\...[    This is an inline block comment. ] note
+note #\^.[     This is an inline block comment. ] note
+note #\^^^...[ This is an inline block comment. ] note
+note #^.[      This is an inline block comment. ] note
+note #^^^...[  This is an inline block comment. ] note
 
-note #«       This is an inline block comment. » note
-note #^«      This is an inline block comment. » note
-note #^^^«    This is an inline block comment. » note
-note #.«      This is an inline block comment. » note
-note #...«    This is an inline block comment. » note
-note #^.«     This is an inline block comment. » note
-note #^^^...« This is an inline block comment. » note
+note #{        This is an inline block comment. } note
+note #\{       This is an inline block comment. } note
+note #^{       This is an inline block comment. } note
+note #^^^{     This is an inline block comment. } note
+note #.{       This is an inline block comment. } note
+note #...{     This is an inline block comment. } note
+note #\^{      This is an inline block comment. } note
+note #\^^^{    This is an inline block comment. } note
+note #\.{      This is an inline block comment. } note
+note #\...{    This is an inline block comment. } note
+note #\^.{     This is an inline block comment. } note
+note #\^^^...{ This is an inline block comment. } note
+note #^.{      This is an inline block comment. } note
+note #^^^...{  This is an inline block comment. } note
 
-note #⦗       This is an inline block comment. ⦘ note
-note #^⦗      This is an inline block comment. ⦘ note
-note #^^^⦗    This is an inline block comment. ⦘ note
-note #.⦗      This is an inline block comment. ⦘ note
-note #...⦗    This is an inline block comment. ⦘ note
-note #^.⦗     This is an inline block comment. ⦘ note
-note #^^^...⦗ This is an inline block comment. ⦘ note
+note #«        This is an inline block comment. » note
+note #\«       This is an inline block comment. » note
+note #^«       This is an inline block comment. » note
+note #^^^«     This is an inline block comment. » note
+note #.«       This is an inline block comment. » note
+note #...«     This is an inline block comment. » note
+note #\^«      This is an inline block comment. » note
+note #\^^^«    This is an inline block comment. » note
+note #\.«      This is an inline block comment. » note
+note #\...«    This is an inline block comment. » note
+note #\^.«     This is an inline block comment. » note
+note #\^^^...« This is an inline block comment. » note
+note #^.«      This is an inline block comment. » note
+note #^^^...«  This is an inline block comment. » note
 
-note #｢       This is an inline block comment. ｣ note
-note #^｢      This is an inline block comment. ｣ note
-note #^^^｢    This is an inline block comment. ｣ note
-note #.｢      This is an inline block comment. ｣ note
-note #...｢    This is an inline block comment. ｣ note
-note #^.｢     This is an inline block comment. ｣ note
-note #^^^...｢ This is an inline block comment. ｣ note
+note #⦗        This is an inline block comment. ⦘ note
+note #\⦗       This is an inline block comment. ⦘ note
+note #^⦗       This is an inline block comment. ⦘ note
+note #^^^⦗     This is an inline block comment. ⦘ note
+note #.⦗       This is an inline block comment. ⦘ note
+note #...⦗     This is an inline block comment. ⦘ note
+note #\^⦗      This is an inline block comment. ⦘ note
+note #\^^^⦗    This is an inline block comment. ⦘ note
+note #\.⦗      This is an inline block comment. ⦘ note
+note #\...⦗    This is an inline block comment. ⦘ note
+note #\^.⦗     This is an inline block comment. ⦘ note
+note #\^^^...⦗ This is an inline block comment. ⦘ note
+note #^.⦗      This is an inline block comment. ⦘ note
+note #^^^...⦗  This is an inline block comment. ⦘ note
 
-    # Many block inline comments on one line.
+note #｢        This is an inline block comment. ｣ note
+note #\｢       This is an inline block comment. ｣ note
+note #^｢       This is an inline block comment. ｣ note
+note #^^^｢     This is an inline block comment. ｣ note
+note #.｢       This is an inline block comment. ｣ note
+note #...｢     This is an inline block comment. ｣ note
+note #\^｢      This is an inline block comment. ｣ note
+note #\^^^｢    This is an inline block comment. ｣ note
+note #\.｢      This is an inline block comment. ｣ note
+note #\...｢    This is an inline block comment. ｣ note
+note #\^.｢     This is an inline block comment. ｣ note
+note #\^^^...｢ This is an inline block comment. ｣ note
+note #^.｢      This is an inline block comment. ｣ note
+note #^^^...｢  This is an inline block comment. ｣ note
 
-note #^..( comment ) note #^..< comment > note
+    # Many inline block comments on one line.
 
-    # ----------------------------------------------------------------
-    # Block multiline comment.
+note #\^.( comment ) note #\^.< comment > note
 
-#^^..(
+    # Multiline block comment.
+
+#\^^^...(
   This is a multiline block comment.
 )
 
-#^^..<
+#\^^^...<
   This is a multiline block comment.
 >
 
-#^^..[
+#\^^^...[
   This is a multiline block comment.
 ]
 
-#^^..{
+#\^^^...{
   This is a multiline block comment.
 }
 
-#^^..«
+#\^^^...«
   This is a multiline block comment.
 »
 
-#^^..⦗
+#\^^^...⦗
   This is a multiline block comment.
 ⦘
 
-#^^..｢
+#\^^^...｢
   This is a multiline block comment.
 ｣
 
     # ----------------------------------------------------------------
+    # Line comment.
+
     # Line comment without double hashing.
 
 # From start of line.
 note # After note.
-# With space after    
+# With space after.    
 
     # Line comment with double hashing.
 
 ##############################
 ##From start of line.
 note ##After note.
-##With space after    
+##With space after.    
 
     # ----------------------------------------------------------------
     # Atomic comment.
@@ -123,6 +175,7 @@ note #note note
     #note    
 (#note)
 ()#note()
+#
 
     # ----------------------------------------------------------------
     # =finish
@@ -137,6 +190,7 @@ note #note note
 <a>
 <a b c>
 < -[figure] "Hi", (42)>
+
     <a>    
 (<a>)
 ()<a>()
@@ -152,6 +206,7 @@ note #note note
 
 `abc
 `#abc😎.9
+
     `abc    
 (`abc)
 ()`abc()
@@ -163,7 +218,35 @@ note #note note
 4.5/4.5`abc
 
     # ----------------------------------------------------------------
+    # Note.
+
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+á é í ó ú â ê î ô û à è ù ë ï ü ç ñ
+Á É Í Ó Ú Â Ê Î Ô Û À È Ù Ë Ï Ü Ç Ñ
+
+'A'
+¡what!
+¿Est-ce_vrai?
+-sound
+-[sound/vol-12.3/rev-0.9]
+a,b,c
+F/A
+F♯/A♭
+
+    a    
+(a)
+()a()
+\a
+^^^a
+...a
+4a
+4.5a
+4.5/4.5a
+
+    # ----------------------------------------------------------------
     # Rest.
+
 _
 
     _    
@@ -175,6 +258,40 @@ _
 4_
 4.5_
 4.5/4.5_
+
+    # ----------------------------------------------------------------
+    # Duration.
+
+4a
+4.5a
+4/4a
+4.5/4.5a
+
+4<a>
+4`a
+4_
+
+    4a    
+(4a)
+()4a()
+\4a
+^4a
+.4a
+
+    # ----------------------------------------------------------------
+    # Nonvalid lone number.
+
+4
+4.5
+4/4
+4.4/4.5
+
+    4    
+(4)
+()4()
+\4
+^4
+.4
 
     # ----------------------------------------------------------------
     # Music expression duration.
@@ -231,44 +348,9 @@ note @marker note
 ()@marker()
 
     # ----------------------------------------------------------------
-    # Duration.
-
-4a
-4.5a
-4/4a
-4.5/4.5a
-
-4<a>
-4`a
-4a
-4_
-
-    4a    
-(4a)
-()4a()
-\4a
-^4a
-.4a
-
-    # ----------------------------------------------------------------
-    # Invalid lone number.
-
-4
-4.5
-4/4
-4.4/4.5
-
-    4    
-(4)
-()4()
-\4
-^4
-.4
-
-    # ----------------------------------------------------------------
     # Restifier backslash.
 
-\(
+\()
 \^^^a
 \...a
 \4
@@ -284,7 +366,7 @@ note @marker note
     # ----------------------------------------------------------------
     # Rhythm flags.
 
-^^^(
+^^^()
 ^^^...
 ^^^4
 ^^^<a>
@@ -300,7 +382,7 @@ note @marker note
     # ----------------------------------------------------------------
     # Rhythm dots.
 
-...(
+...()
 ...4
 ...<a>
 ...`a
@@ -341,59 +423,145 @@ note @marker note
     # Barline.
 
 | | |
-
-    # ----------------------------------------------------------------
-    # Note.
-
-a b c d e f g h i j k l m n o p q r s t u v w x y z
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-á é í ó ú â ê î ô û à è ù ë ï ü ç ñ
-Á É Í Ó Ú Â Ê Î Ô Û À È Ù Ë Ï Ü Ç Ñ
-
-'A'
-¡what!
-¿Est-ce_vrai?
--sound
--[sound/vol-12.3/rev-0.9]
-a,b,c
-F/A
-F♯/A♭
-
-    a    
-(a)
-()a()
-\a
-^^^a
-...a
-4a
-4.5a
-4.5/4.5a
+|=flex
 
 #( -------------------------------------------------------------------
   Failers
   Most everything below should be uncolored.
 -------------------------------------------------------------------- )
 
-# WHAT IS WRONG HERE?
+    # ----------------------------------------------------------------
+    # Block comment.
 
-=4a
-!60a
-=finis
+    # Fails with unsupported brackets.
+! #【  】 !
 
-# NOT YET ORGANIZED.
+    # ----------------------------------------------------------------
+    # Line comment.
 
-    # keyword: =finish
-note =finish
-=finish note
-note =finish note
+    # Fails when no space after the # sigil.
+! #$ !
 
-    # keyword: ｢marker｣
-@word_
-@word-
-@word.
+    # ----------------------------------------------------------------
+    # =finish
 
-    # Backtick Note
+! =finish
+=finish !
+! =finish !
+=finito
+
+    # ----------------------------------------------------------------
+    # Note container.
+
+<
+>
+
+    # Fails when multilined.
+<note
+container>
+
+    # ----------------------------------------------------------------
+    # Backtick note.
+
 ` ` `
 (`)
 ()`()
     `    
+
+    # ----------------------------------------------------------------
+    # Note.
+
+/a  # Bad start.
+a!a # Bad middle.
+a$  # Bad end.
+
+    # ----------------------------------------------------------------
+    # Rest.
+
+_\
+_^
+_.
+_/
+_4
+
+    # ----------------------------------------------------------------
+    # Duration.
+
+4\
+4^
+4.
+4/
+4/4/4
+
+    # ----------------------------------------------------------------
+    # Nonvalid lone number.
+
+4.
+4/4/4
+
+    # ----------------------------------------------------------------
+    # Music expression duration.
+
+=unknown
+=flexy
+=4.
+=4/4/4
+
+    # ----------------------------------------------------------------
+    # Metronome.
+
+!unknown
+!60.
+!a60
+!4.
+!4/4/4
+
+    # ----------------------------------------------------------------
+    # Marker.
+
+@
+
+    # Bad end.
+@a_
+@a.
+@a-
+
+@$ # Illegal characters.
+
+    # ----------------------------------------------------------------
+    # Restifier backslash.
+
+\
+\$
+\[] # Unsuported brackets.
+
+    # ----------------------------------------------------------------
+    # Rhythm flags.
+
+^^^
+^$
+
+    # ----------------------------------------------------------------
+    # Rhythm dots.
+
+...
+...$
+
+    # ----------------------------------------------------------------
+    # Repeater dot.
+
+.$
+$.
+
+    # ----------------------------------------------------------------
+    # Repeater dash.
+
+-$
+$-
+
+    # ----------------------------------------------------------------
+    # Barline.
+
+||
+|$
+$|
