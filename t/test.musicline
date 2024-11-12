@@ -1,0 +1,65 @@
+# Musicline Syntax Highlighter Tests
+# v0.2.0
+# Copyright 2024 Pierre-Emmanuel Lévesque
+
+# --------------------------------------------------------------------
+#  Passers.
+#  Everything below must be colored.
+# --------------------------------------------------------------------
+
+######################################################################
+#This is a comment.
+#    This is a comment.
+    #This is a comment.
+    #    This is a comment.
+
+    # Musicline long format. (timepoint, voice, event type, event data)
+0       0  marker introduction
+0.5     1  note   F♭/D♯
+1       2  rest
+1.5     3  rested
+10.50   4  tail
+123.456 10 tempo  90    
+
+    # Musicline short format. (timepoint, note data)
+0
+1 note
+1.5 This note is F♭/D♯
+10.50   Data with more than one space before.
+123.456 Data with more than one space after.    
+
+# --------------------------------------------------------------------
+#  Failers.
+#  Everything below must be uncolored.
+# --------------------------------------------------------------------
+
+    # ----------------------------------------------------------------
+    # Timepoint.
+
+    # Fails with leading zero.
+01
+01.5
+
+    # Significand without an exponent.
+1.
+
+    # Exponent without a significand.
+.1
+
+    # ----------------------------------------------------------------
+    # Voice.
+
+    # Fails if not integer, but starts with an integer.
+00 1.1
+00 1.1.1
+
+    # Fails with leading zero.
+00 00
+00 01
+
+    # ----------------------------------------------------------------
+    # Event type.
+
+    # Fails if not a valid event type.
+00 1.1 unknown
+00 1.1 1

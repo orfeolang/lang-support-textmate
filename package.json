@@ -13,12 +13,21 @@
   "contributes": {
     "languages": [
       {
+        "id": "Musicline",
+        "extensions": [".musicline"]
+      },
+      {
         "id": "Orfeo",
         "extensions": [".orfeo"],
         "configuration": "./vscode/orfeo.language-configuration.json"
       }
     ],
     "grammars": [
+      {
+        "language": "Musicline",
+        "scopeName": "source.musicline",
+        "path": "./syntaxes/musicline.tmLanguage.json"
+      },
       {
         "language": "Orfeo",
         "scopeName": "source.orfeo",

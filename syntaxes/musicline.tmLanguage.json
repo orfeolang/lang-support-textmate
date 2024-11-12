@@ -1,0 +1,36 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Musicline",
+    "scopeName": "source.musicline",
+    "fileTypes": [ "musicline" ],
+    "patterns": [
+        { "include": "#comment-line" },
+        { "include": "#timepoint" },
+        { "include": "#voice" },
+        { "include": "#event-type" },
+        { "include": "#event-data" }
+    ],
+    "repository": {
+        "comment-line": {
+            "name": "comment.line.number-sign.musicline",
+            "begin": "^\\s*#",
+            "end": "$"
+        },
+        "timepoint": {
+            "name": "constant.numeric.musicline",
+            "match": "(?<=^\\s*)(0|([1-9]\\d*))(\\.\\d+)?(?=\\s|$)"
+        },
+        "voice": {
+            "name": "variable.parameter.musicline",
+            "match": "(?<=^\\s*\\S+\\s+)(0|([1-9]\\d*))(?=\\s|$)"
+        },
+        "event-type": {
+            "name": "keyword.other.musicline",
+            "match": "(?<=^\\s*\\S+\\s+\\S+\\s+)(marker|note|rest|rested|tail|tempo)(?=\\s|$)"
+        },
+        "event-data": {
+            "name": "string.unquoted.musicline",
+            "match": "((?<=^\\s*\\S+\\s+\\S+\\s+\\S+\\s+)(\\S+\\s*)+(?=$))|((?<=^\\s*\\S+\\s+)[^0-9\\s].*(?=$))"
+        }
+    }
+}
