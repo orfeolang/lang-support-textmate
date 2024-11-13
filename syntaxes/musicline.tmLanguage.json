@@ -26,11 +26,11 @@
         },
         "event-type": {
             "name": "keyword.other.musicline",
-            "match": "(?<=^\\s*\\S+\\s+\\S+\\s+)(marker|note|rest|rested|tail|tempo)(?=\\s|$)"
+            "match": "(?<=^\\s*(\\S+\\s+){2})(marker|note|rest|rested|tail|tempo)(?=\\s|$)"
         },
         "event-data": {
             "name": "string.unquoted.musicline",
-            "match": "((?<=^\\s*\\S+\\s+\\S+\\s+\\S+\\s+)(\\S+\\s*)+(?=$))|((?<=^\\s*\\S+\\s+)[^0-9\\s].*(?=$))"
+            "match": "((?<=^\\s*(\\S+\\s+){3})(\\S+\\s*)+(?=$))|((?<=^\\s*\\S+\\s+)[^0-9\\s].*(?=$))"
         }
     }
 }
