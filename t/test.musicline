@@ -49,7 +49,7 @@
     # ----------------------------------------------------------------
     # Voice.
 
-    # Fails if not integer, but starts with an integer.
+    # Fails if not an integer, but starts with an integer.
 00 1.1
 00 1.1.1
 
