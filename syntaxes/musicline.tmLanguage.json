@@ -8,7 +8,8 @@
         { "include": "#timepoint" },
         { "include": "#voice" },
         { "include": "#event-type" },
-        { "include": "#event-data" }
+        { "include": "#event-data_long-format" },
+        { "include": "#note-data_short-format" }
     ],
     "repository": {
         "comment-line": {
@@ -28,9 +29,17 @@
             "name": "keyword.other.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2})(marker|note|rest|rested|tail|tempo)(?=\\s|$)"
         },
-        "event-data": {
+        "event-data_long-format": {
             "name": "string.unquoted.musicline",
-            "match": "((?<=^\\s*(\\S+\\s+){3}).*+(?=$))|((?<=^\\s*\\S+\\s+)[^0-9\\s].*+(?=$))"
+            "match": "(?<=^\\s*(\\S+\\s+){3})(\\S+\\s*)++(?=$)"
+        },
+        "note-data_short-format": {
+            "captures": {
+                "2": { "name": "constant.character.escape.musicline" },
+                "3": { "name": "string.unquoted.musicline" },
+                "4": { "name": "string.unquoted.musicline" }
+            },
+            "match": "(?<=^\\s*\\S+\\s+)((\\\\)(.*+)|([^0-9\\s].*+))(?=$)"
         }
     }
 }
