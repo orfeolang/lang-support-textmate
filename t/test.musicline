@@ -23,7 +23,7 @@
 10.50   4  tail
 123.456 10 tempo  90    
 
-    # Do not isolate (color) the backslash escape character when starting event-data.
+    # Do not isolate (color) the backslash escape character when starting event data.
 
 0   1 note \   Do not color \ characters in long format.
 1   1 note \1  Do not color \ characters in long format.
@@ -38,7 +38,7 @@
 10.50   Data with more than one space before.
 123.456 Data with more than one space after.    
 
-    # Do isolate (color) the backslash escape character when starting note-data.
+    # Do isolate (color) the backslash escape character when starting note data.
 
 0   \   Only color the first \ character.
 1   \1  Only color the first \ character.
