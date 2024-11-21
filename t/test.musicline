@@ -19,16 +19,18 @@
 0       0  marker introduction
 0.5     1  note   F♭/D♯
 1       2  rest
-1.5     3  rested
+1.5     3  rested    
 10.50   4  tail
 123.456 10 tempo  90    
 
-    # Do not isolate (color) the backslash escape character when starting event data.
+    # Isolate the event data's escape character.
 
-0     1 note \   Do not color \ characters in long format.
-1     1 note \ \ Do not color \ characters in long format.
-1.5   1 note \1  Do not color \ characters in long format.
-10.50 1 note \\1 Do not color \ characters in long format.
+0     1 note \   Only color the first \ character.
+1     1 note \ \ Only color the first \ character.
+1     1 note \ \
+1.5   1 note \1  Only color the first \ character.
+10.50 1 note \\1 Only color the first \ character.    
+10.50 1 note \\
 
     ##################################################################
     # Musicline short format. (timepoint, note data)
@@ -39,13 +41,13 @@
 10.50   Data with more than one space before.
 123.456 Data with more than one space after.    
 
-    # Do isolate (color) the backslash escape character when starting note data.
+    # Isolate the note data's escape character.
 
 0     \   Only color the first \ character.
 1     \ \ Only color the first \ character.
 1     \ \
 1.5   \1  Only color the first \ character.
-10.50 \\1 Only color the first \ character.
+10.50 \\1 Only color the first \ character.    
 10.50 \\
 
 # --------------------------------------------------------------------
