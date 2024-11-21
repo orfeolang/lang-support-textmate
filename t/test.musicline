@@ -25,9 +25,10 @@
 
     # Do not isolate (color) the backslash escape character when starting event data.
 
-0   1 note \   Do not color \ characters in long format.
-1   1 note \1  Do not color \ characters in long format.
-1.5 1 note \\1 Do not color \ characters in long format.
+0     1 note \   Do not color \ characters in long format.
+1     1 note \ \ Do not color \ characters in long format.
+1.5   1 note \1  Do not color \ characters in long format.
+10.50 1 note \\1 Do not color \ characters in long format.
 
     ##################################################################
     # Musicline short format. (timepoint, note data)
@@ -40,9 +41,12 @@
 
     # Do isolate (color) the backslash escape character when starting note data.
 
-0   \   Only color the first \ character.
-1   \1  Only color the first \ character.
-1.5 \\1 Only color the first \ character.
+0     \   Only color the first \ character.
+1     \ \ Only color the first \ character.
+1     \ \
+1.5   \1  Only color the first \ character.
+10.50 \\1 Only color the first \ character.
+10.50 \\
 
 # --------------------------------------------------------------------
 #  Failers.
