@@ -18,38 +18,38 @@
 
 0       0  marker introduction
 0.5     1  note   F♭/D♯        	 
-1       2  rest
-1.5     3  rested
+    1   2  rest
+	1.5 3  rested
 10.50   4  tail        	     
 123.456 10 tempo  90    	     
 
     # Isolate the event data's escape character.
 
-0     1 note \   Only color the first \ character.
-1     1 note \ \ Only color the first \ character.
-1     1 note \ \
-1.5   1 note \1  Only color the first \ character.
-10.50 1 note \\1 Only color the first \ character.    	     
-10.50 1 note \\
+0       1 note \   Only color the first \ character.
+1       1 note \ \ Only color the first \ character.
+    1   1 note  \ \
+	1.5 1 note	\1  Only color the first \ character.
+10.50   1 note \\1 Only color the first \ character.    	     
+123.456 1 note \\
 
     ##################################################################
     # Musicline short format. (timepoint, note data)
 
 0
-0.5        	 
+1        	 
 1 note
-1.5 This note is F♭/D♯
-10.50   Data with more than one space before.
+    1.5 This note is F♭/D♯
+	10.50   Data with more than one space before.
 123.456 Data with more than one space after.        	 
 
     # Isolate the note data's escape character.
 
-0     \   Only color the first \ character.
-1     \ \ Only color the first \ character.
-1     \ \
-1.5   \1  Only color the first \ character.
-10.50 \\1 Only color the first \ character.
-10.50 \\    	     
+0       \   Only color the first \ character.
+    1   \ \ Only color the first \ character.
+	1   \ \
+1.5     \1  Only color the first \ character.
+10.50   \\1 Only color the first \ character.
+123.456 \\    	     
 
 # --------------------------------------------------------------------
 #  Failers.
