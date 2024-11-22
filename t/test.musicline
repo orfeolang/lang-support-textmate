@@ -59,14 +59,14 @@
     # ----------------------------------------------------------------
     # Timepoint.
 
-    # Fails with leading zero.
+    # Fails with a leading zero.
 01
 01.5
 
-    # Fails when significand is without an exponent.
+    # Fails when a float is without a fractional part.
 1.
 
-    # Fails when exponent is without a significand.
+    # Fails when a float is without an integer part.
 .1
 
     # ----------------------------------------------------------------
@@ -76,7 +76,7 @@
 00 1.1
 00 1.1.1
 
-    # Fails with leading zero.
+    # Fails with a leading zero.
 00 00
 00 01
 
