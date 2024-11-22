@@ -1,4 +1,4 @@
-# Editor Support
+# Lang Support TextMate
 
 ## License
 

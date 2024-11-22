@@ -1,7 +1,7 @@
 {
   "name": "orfeo",
   "displayName": "Orfeo",
-  "description": "Syntax Highlight for the Orfeo programming language.",
+  "description": "Orfeo and Musicline language support for TextMate based systems.",
   "version": "0.1.0",
   "publisher": "Orfeo",
   "engines": {
