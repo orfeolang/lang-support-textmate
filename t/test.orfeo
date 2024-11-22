@@ -158,21 +158,21 @@ note #\^.( comment ) note #\^.< comment > note
 
 # From start of line.
 note # After note.
-# With space after.    
+# With space after.    	
 
     # Line comment with double hashing.
 
 ##############################
 ##From start of line.
 note ##After note.
-##With space after.    
+##With space after.	    	
 
     # ----------------------------------------------------------------
     # Atomic comment.
 
 note #note note
 #note
-    #note    
+    #note    	
 (#note)
 ()#note()
 #
@@ -242,7 +242,7 @@ note #note note
 
 \()
 
-   \note    
+   \note	    	
 (\note)
 ()\note()
 
@@ -253,7 +253,7 @@ note #note note
 <a b c>
 < -[figure] "Hi", (42)>
 
-    <a>    
+    <a>    	
 (<a>)
 ()<a>()
 \<a>
@@ -269,7 +269,7 @@ note #note note
 `abc
 `#abc😎.9
 
-    `abc    
+    `abc	    	
 (`abc)
 ()`abc()
 \`abc
@@ -296,7 +296,7 @@ a,b,c
 F/A
 F♯/A♭
 
-    a    
+    a    	
 (a)
 ()a()
 \a
@@ -311,7 +311,7 @@ F♯/A♭
 
 _
 
-    _    
+    _	    	
 (_)
 ()_()
 ^^^_
@@ -335,7 +335,7 @@ _
 4`a
 4_
 
-    4a    
+    4a	    	
 (4a)
 ()4a()
 \4a
@@ -357,7 +357,7 @@ _
 
 note =flex note
 =flex
-    =flex    
+    =flex    	
 (=flex)
 ()=flex()
 |=flex
@@ -384,7 +384,7 @@ note =flex note
 
 note !60 note
 !60
-    !60    
+    !60	    	
 (!60)
 ()!60()
 
@@ -398,7 +398,7 @@ note !60 note
 
 note @marker note
 @marker
-    @marker    
+    @marker    	
 (@marker)
 ()@marker()
 
@@ -414,7 +414,7 @@ note @marker note
 ^^^a
 ^^^_
 
-    ^^^a    
+    ^^^a	    	
 (^^^a)
 ()^^^a()
 \^^^a
@@ -430,7 +430,7 @@ note @marker note
 ...a
 ..._
 
-    ...a    
+    ...a    	
 (...a)
 ()...a()
 \...a
@@ -442,7 +442,7 @@ note @marker note
 . . .
 .)
 
-    .    
+    .	    	
 (.)
 ().
 \.
@@ -452,7 +452,7 @@ note @marker note
 
 - - -
 
-    -    
+    -	    	
 (-)
 ()-()
 \-
@@ -515,7 +515,7 @@ container>
 ` ` `
 (`)
 ()`()
-    `    
+    `	    	
 
     # ----------------------------------------------------------------
     # Note.
