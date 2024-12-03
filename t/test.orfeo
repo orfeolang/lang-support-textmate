@@ -290,8 +290,8 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 'A'
 ¡what!
 ¿Est-ce_vrai?
--sound
--[sound/vol-12.3/rev-0.9]
+sound
+sound/[vol-12.3/rev-0.9]
 a,b,c
 F/A
 F♯/A♭
