@@ -31,17 +31,15 @@
         },
         "event-data_long-format": {
             "captures": {
-                "2": { "name": "constant.character.escape.musicline" },
-                "4": { "name": "string.unquoted.musicline" },
-                "5": { "name": "string.unquoted.musicline" }
+                "2": { "name": "string.unquoted.musicline" },
+                "3": { "name": "constant.character.escape.musicline" }
             },
             "match": "(?<=^\\s*(\\S+\\s+){3})((\\\\)(.*+)|(\\S+\\s+)++)(?=$)"
         },
         "note-data_short-format": {
             "captures": {
-                "2": { "name": "constant.character.escape.musicline" },
-                "3": { "name": "string.unquoted.musicline" },
-                "4": { "name": "string.unquoted.musicline" }
+                "1": { "name": "string.unquoted.musicline" },
+                "2": { "name": "constant.character.escape.musicline" }
             },
             "match": "(?<=^\\s*\\S+\\s+)((\\\\)(.*+)|([^0-9\\s].*+))(?=$)"
         }
