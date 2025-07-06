@@ -20,11 +20,11 @@
         },
         "icon-eject": {
             "name": "constant.character.icon.eject.orfeoerror",
-            "match": "⏏"
+            "match": "(?<=^\\d+➤.*)⏏"
         },
         "icon-sequence-start": {
             "name": "constant.character.icon.sequence-start.orfeoerror",
-            "match": "⭢"
+            "match": "(?<=^\\d+➤.*)⭢"
         }
     }
 }
