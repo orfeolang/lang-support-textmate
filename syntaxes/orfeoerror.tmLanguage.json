@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "OrfeoError",
+    "scopeName": "source.orfeoerror",
+    "fileTypes": [ "orfeoerror" ],
+    "patterns": [
+        { "include": "#header" },
+        { "include": "#line-number" },
+        { "include": "#eject-icon" },
+        { "include": "#sequence-start-icon" }
+    ],
+    "repository": {
+        "header": {
+            "name": "markup.heading.orfeoerror",
+            "match": "(?<=^)===OOPS!==="
+        },
+        "line-number": {
+            "name": "keyword.other.orfeoerror",
+            "match": "(?<=^)\\d+➤"
+        },
+        "eject-icon": {
+            "name": "constant.character.orfeoerror",
+            "match": "⏏"
+        },
+        "sequence-start-icon": {
+            "name": "constant.character.orfeoerror",
+            "match": "⭢"
+        }
+    }
+}

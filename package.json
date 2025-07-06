@@ -20,6 +20,10 @@
         "id": "Orfeo",
         "extensions": [".orfeo"],
         "configuration": "./vscode/orfeo.language-configuration.json"
+      },
+      {
+        "id": "OrfeoError",
+        "extensions": [".orfeoerror"]
       }
     ],
     "grammars": [
@@ -32,6 +36,11 @@
         "language": "Orfeo",
         "scopeName": "source.orfeo",
         "path": "./syntaxes/orfeo.tmLanguage.json"
+      },
+      {
+        "language": "OrfeoError",
+        "scopeName": "source.orfeoerror",
+        "path": "./syntaxes/orfeoerror.tmLanguage.json"
       }
     ]
   }
