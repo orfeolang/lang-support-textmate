@@ -6,8 +6,8 @@
     "patterns": [
         { "include": "#header" },
         { "include": "#line-number" },
-        { "include": "#eject-icon" },
-        { "include": "#sequence-start-icon" }
+        { "include": "#icon-eject" },
+        { "include": "#icon-sequence-start" }
     ],
     "repository": {
         "header": {
@@ -15,15 +15,15 @@
             "match": "(?<=^)===OOPS!==="
         },
         "line-number": {
-            "name": "keyword.other.orfeoerror",
+            "name": "keyword.other.line-number.orfeoerror",
             "match": "(?<=^)\\d+➤"
         },
-        "eject-icon": {
-            "name": "constant.character.orfeoerror",
+        "icon-eject": {
+            "name": "constant.character.icon.eject.orfeoerror",
             "match": "⏏"
         },
-        "sequence-start-icon": {
-            "name": "constant.character.orfeoerror",
+        "icon-sequence-start": {
+            "name": "constant.character.icon.sequence-start.orfeoerror",
             "match": "⭢"
         }
     }
