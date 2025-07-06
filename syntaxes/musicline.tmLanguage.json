@@ -18,11 +18,11 @@
             "end": "$"
         },
         "timepoint": {
-            "name": "constant.numeric.musicline",
+            "name": "constant.numeric.timepoint.musicline",
             "match": "(?<=^\\s*)(0|([1-9]\\d*))(\\.\\d+)?(?=\\s|$)"
         },
         "voice": {
-            "name": "variable.parameter.musicline",
+            "name": "variable.parameter.voice.musicline",
             "match": "(?<=^\\s*\\S+\\s+)(0|([1-9]\\d*))(?=\\s|$)"
         },
         "event-type": {
