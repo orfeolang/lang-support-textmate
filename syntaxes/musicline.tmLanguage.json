@@ -5,8 +5,8 @@
     "fileTypes": [ "musicline" ],
     "patterns": [
         { "include": "#comment-line" },
-        { "include": "#timepoint" },
-        { "include": "#voice" },
+        { "include": "#event-point" },
+        { "include": "#event-voice" },
         { "include": "#event-type" },
         { "include": "#event-data_long-format" },
         { "include": "#note-data_short-format" }
@@ -17,31 +17,31 @@
             "begin": "^\\s*#",
             "end": "$"
         },
-        "timepoint": {
-            "name": "constant.numeric.timepoint.musicline",
-            "match": "(?<=^\\s*)(0|([1-9]\\d*))(\\.\\d+)?(?=\\s|$)"
+        "event-point": {
+            "name": "constant.numeric.event.point.musicline",
+            "match": "(?<=^\\s*)((0|[1-9]\\d*)\\.?|(0|[1-9]\\d*)?\\.\\d+)(?=\\s|$)"
         },
-        "voice": {
+        "event-voice": {
             "name": "variable.parameter.voice.musicline",
-            "match": "(?<=^\\s*\\S+\\s+)(0|([1-9]\\d*))(?=\\s|$)"
+            "match": "(?<=^\\s*\\S+\\s+)((0|[1-9]\\d*)(_(0|[1-9]\\d*))*)(?=\\s|$)"
         },
         "event-type": {
             "name": "keyword.other.musicline",
-            "match": "(?<=^\\s*(\\S+\\s+){2})(marker|note|rest|rested|tail|tempo)(?=\\s|$)"
+            "match": "(?<=^\\s*(\\S+\\s+){2})(marker|metro|\\\\note|note|rest|tail)(?=\\s|$)"
         },
         "event-data_long-format": {
             "captures": {
                 "2": { "name": "string.unquoted.musicline" },
                 "3": { "name": "constant.character.escape.musicline" }
             },
-            "match": "(?<=^\\s*(\\S+\\s+){3})((\\\\)(.*+)|(\\S+\\s+)++)(?=$)"
+            "match": "(?<=^\\s*(\\S+\\s+){3})((`)(.*+)|(\\S+\\s+)++)(?=$)"
         },
         "note-data_short-format": {
             "captures": {
                 "1": { "name": "string.unquoted.musicline" },
                 "2": { "name": "constant.character.escape.musicline" }
             },
-            "match": "(?<=^\\s*\\S+\\s+)((\\\\)(.*+)|([^0-9\\s].*+))(?=$)"
+            "match": "(?<=^\\s*\\S+\\s+)((`)(.*+)|([^0-9\\s].*+))(?=$)"
         }
     }
 }

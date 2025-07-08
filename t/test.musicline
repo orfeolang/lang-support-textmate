@@ -13,11 +13,13 @@
     #This is a comment.
     #    This is a comment.
 
-##################################################################
+######################################################################
 # Musicline short format. (timepoint, note data)
 
 0
-1        	 
+0.
+0.10
+.10        	 
 1 note
     1.5 This note is F♭/D♯
 	10.50   Data with more than one space before.
@@ -25,33 +27,33 @@
 
     # Isolate the note data's escape character.
 
-0       \   Only color the first \ character.
-    1   \ \ Only color the first \ character.
-	1   \ \
-1.5     \1  Only color the first \ character.
-10.50   \\1 Only color the first \ character.
-123.456 \\    	     
+0       `   Only color the first \ character.
+    1   ` ` Only color the first \ character.
+	1   ` `
+1.5     `1  Only color the first \ character.
+10.50   ``1 Only color the first \ character.
+123.456 ``    	     
 
-##################################################################
+######################################################################
 # Musicline long format. (timepoint, voice, event type, event data)
 
-0       0  marker _Euridice's-section-01.02
-0.5     1  note   F♭/D♯        	 
-0.5     1  note   The final approach
-    1   2  rest
-	1.5 3  rested
-10.50   4  tail        	     
-123.456 10 tempo  90    	     
-123.456 10 tempo  90.5
+0       0     marker _Euridice's-section-01.02
+0.5     1     note   F♭/D♯        	 
+0.5     1_1   note   The final approach
+    1   2     \note  This note is rested...
+    1.5 2     rest
+10.50   4     tail        	     
+123.456 10    metro  90    	     
+123.456 10_10 metro  90.5
 
     # Isolate the event data's escape character.
 
-0       1 note \   Only color the first \ character.
-1       1 note \ \ Only color the first \ character.
-    1   1 note  \ \
-	1.5 1 note	\1  Only color the first \ character.
-10.50   1 note \\1 Only color the first \ character.    	     
-123.456 1 note \\
+0       1 note `   Only color the first \ character.
+1       1 note ` ` Only color the first \ character.
+    1   1 note  ` `
+	1.5 1 note	`1  only color the first \ character.
+10.50   1 note ``1 Only color the first \ character.    	     
+123.456 1 note ``
 
 # --------------------------------------------------------------------
 #  Failers.
@@ -59,20 +61,17 @@
 # --------------------------------------------------------------------
 
     # ----------------------------------------------------------------
-    # Timepoint.
+    # Event point.
 
     # Fails with a leading zero.
 01
 01.5
 
-    # Fails when a float is without a fractional part.
-1.
-
-    # Fails when a float is without an integer part.
-.1
+    # Fails with a negative value.
+-1
 
     # ----------------------------------------------------------------
-    # Voice.
+    # Event voice.
 
     # Fails if not an integer, but starts with an integer.
 00 1.1
