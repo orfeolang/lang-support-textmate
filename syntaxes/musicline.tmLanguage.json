@@ -19,7 +19,7 @@
         },
         "event-point": {
             "name": "constant.numeric.event.point.musicline",
-            "match": "(?<=^\\s*)((0|[1-9]\\d*)\\.?|(0|[1-9]\\d*)?\\.\\d+)(?=\\s|$)"
+            "match": "(?<=^\\s*)(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(?=\\s|$)"
         },
         "event-voice": {
             "name": "variable.parameter.voice.musicline",
