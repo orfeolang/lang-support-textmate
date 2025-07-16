@@ -5,6 +5,7 @@
     "fileTypes": [ "orfeo" ],
     "patterns": [
         { "include": "#comment-block-#_done" },
+        { "include": "#comment-atomic-with-music-expression" },
         { "include": "#comment-block" },
         { "include": "#comment-line" },
         { "include": "#comment-atomic" },
@@ -30,6 +31,10 @@
             "contentName": "comment.block.orfeo",
             "begin": "(?<=^\\s*#_done\\s*$)",
             "end": ""
+        },
+        "comment-atomic-with-music-expression": {
+            "name": "comment.line.number-sign.orfeo",
+            "match": "(?<=^|[\\s()])#\\\\?\\^*,*\\([^\\(]*(\\([^\\(]*(\\([^\\(]*(\\([^\\(]*(\\([^\\(]*\\)[^\\(]*)*\\)[^\\(]*)*\\)[^\\(]*)*\\)[^\\(]*)*\\)(?=[\\s()]|$)"
         },
         "comment-block": {
             "patterns": [
