@@ -14,45 +14,100 @@
     #    This is a comment.
 
 ######################################################################
-# Musicline short format. (timepoint, note data)
+# Musicline short format. (point, note data)
 
+    # Base.
 0
-0.10
-.10        	 
-1 note
-    1.5 This note is F♭/D♯
-	10.50   Data with more than one space before.
-123.456 Data with more than one space after.        	 
+1.2
+.34    
+    1234567890.1234567890    
+5 note
+    6.7 F♭/D♯
+    8 Note with many words.
+	90.12    Note with more than one space before.
+123.456 Note with more than one space after.    
+789.012    Note with spaces around.    
 
-    # Isolate the note data's escape character.
+    # Comment out leading backtick.
+0 `123 backtick note starting with numbers.
+0 ` 456 backtick note starting with space then numbers.
+0    `Backtick note with more than one space before.
+0 ` Backtick note with more than one space after.    
+0    `    Backtick note with spaces around.    
+0 `` Two backticks in a row.
+0 `    `    Two backticks in a row with spaces before.
 
-0       `   Only color the first \ character.
-    1   ` ` Only color the first \ character.
-	1   ` `
-1.5     `1  Only color the first \ character.
-10.50   ``1 Only color the first \ character.
-123.456 ``    	     
+    # Comment out after muting backslash.
+0 \muted
+0 \ muted
+0    \    Muted with many words.
+0 \muted \ With a second muting backslash.
+0 `\muted
+0 ` \muted
+0    ` \ muted
+0 ` ` \muted
+0 ` `no\te muted
+0 note \muted
+0 note    \    muted
+0 note    \muted
+0 note    \ Muted with many words.
+0 no\te Muted in the middle.
+0 `123 \muted
+0 ` 123 \ muted
+0 `no\te
 
 ######################################################################
-# Musicline long format. (timepoint, voice, event type, event data)
+# Musicline long format. (point, voice, type, data)
 
-0       0     marker _Euridice's-section-01.02
-0.5     1     note   F♭/D♯        	 
-0.5     1_1   note   The final approach
-    1   2     \note  This note is rested...
-    1.5 2     rest
-10.50   4     tail        	     
-123.456 10    metro  90    	     
-123.456 10_10 metro  90.5
+    # Base.
+0       0     marker _marker's-section-01.02
+    0   0     marker    marker    
+123.456 10    metro 90    
+    789.012 10_10 metro    90.5
+1.2     1     note F♭/D♯
+1.2     1     note   F♭/D♯    
+1.2     1     note   More than one word.    
+1.2     1     note ` Backtick starts are not ignored.
+1.2     1_2_3 note    \muted
+    3   4     note    \    muted
+    4   4     note    note \ Partially muted.
+    5   4     note    abc\def
+    6   4     note ` abc\Mute when starting with a backtick.
+    7   4     note abc\def\ghi More than one muting backslash.
+    8   4     rest
+    9   4     rest    
+12.34   5 tail
+56.78   5 tail    
 
-    # Isolate the event data's escape character.
+# --------------------------------------------------------------------
+#  Partials.
+#  Partially colored.
+# --------------------------------------------------------------------
 
-0       1 note `   Only color the first \ character.
-1       1 note ` ` Only color the first \ character.
-    1   1 note  ` `
-	1.5 1 note	`1  only color the first \ character.
-10.50   1 note ``1 Only color the first \ character.    	     
-123.456 1 note ``
+    # Bad point is uncolored.
+01 0_0 rest
+
+    # Bad voice is uncolored.
+0 1.1.1 rest
+
+    # Unknown type is uncolored.
+0 0_0 unknown-type
+
+    # Bad marker data is uncolored.
+0 1 marker @bad-marker-data
+
+    # Extra marker words are uncolored.
+0 1 marker marker-data-word extra-marker-data-word
+
+    # Bad metro data is uncolored.
+0 1 metro bad-metro-data
+0 1 metro 01
+0 1 metro 01.1
+0 1 metro 90.
+
+    # Useless data on dataless types is uncolored.
+0 1 rest useless-data
+0 1 tail useless-data
 
 # --------------------------------------------------------------------
 #  Failers.
@@ -66,19 +121,25 @@
 01
 01.5
 
+    # Fails with a float missing its fractional-part.
+4.
+
     # Fails with a negative value.
 -1
 
     # ----------------------------------------------------------------
     # Event voice.
 
+    # Fails with a leading zero.
+00 00
+00 01
+
     # Fails if not an integer, but starts with an integer.
 00 1.1
 00 1.1.1
 
-    # Fails with a leading zero.
-00 00
-00 01
+    # Fails with a trailing underscore.
+00 10_10_
 
     # ----------------------------------------------------------------
     # Event type.

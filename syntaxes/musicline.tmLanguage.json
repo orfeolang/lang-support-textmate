@@ -4,92 +4,92 @@
     "scopeName": "source.musicline",
     "fileTypes": [ "musicline" ],
     "patterns": [
-        { "include": "#comment-line" },
-        { "include": "#event-point" },
-        { "include": "#event-voice" },
-        { "include": "#event-type_marker" },
-        { "include": "#event-type_metro" },
-        { "include": "#event-type_note" },
-        { "include": "#event-type_rest" },
-        { "include": "#event-type_tail" },
-        { "include": "#event-data_marker" },
-        { "include": "#event-data_metro" },
-        { "include": "#event-data_note" },
-        { "include": "#event-data_note-muted" },
-        { "include": "#event-data_short-form_note-muted" },
-        { "include": "#event-data_short-form_note-muted-after-tick" },
-        { "include": "#event-data_short-form_tick-before-note" },
-        { "include": "#event-data_short-form_note" },
-        { "include": "#event-data_short-form_note-after-tick" }
+        { "include": "#comment_line" },
+        { "include": "#point" },
+        { "include": "#voice" },
+        { "include": "#type_marker" },
+        { "include": "#type_metro" },
+        { "include": "#type_note" },
+        { "include": "#type_rest" },
+        { "include": "#type_tail" },
+        { "include": "#data_marker" },
+        { "include": "#data_metro" },
+        { "include": "#data_note" },
+        { "include": "#data_note-muted" },
+        { "include": "#short-form_data_note-muted" },
+        { "include": "#short-form_data_note-muted-after-backtick" },
+        { "include": "#short-form_data_backtick-before-note" },
+        { "include": "#short-form_data_note" },
+        { "include": "#short-form_data_note-after-backtick" }
     ],
     "repository": {
-        "comment-line": {
+        "comment_line": {
             "name": "comment.line.number-sign.musicline",
-            "begin": "^\\s*#",
+            "begin": "(?<=^\\s*)#",
             "end": "$"
         },
-        "event-point": {
-            "name": "constant.numeric.event.point.musicline",
-            "match": "(?<=^\\s*)(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(?=\\s|$)"
+        "point": {
+            "name": "constant.numeric.point.musicline",
+            "match": "(?<=^\\s*)((0|[1-9]\\d*)(\\.\\d+)?|\\.\\d+)(?=\\s|$)"
         },
-        "event-voice": {
-            "name": "variable.parameter.event.voice.musicline",
+        "voice": {
+            "name": "variable.parameter.voice.musicline",
             "match": "(?<=^\\s*\\S+\\s+)(0|[1-9]\\d*)(_(0|[1-9]\\d*))*(?=\\s|$)"
         },
-        "event-type_marker": {
-            "name": "keyword.other.event.type.marker.musicline",
+        "type_marker": {
+            "name": "keyword.other.type.marker.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2})marker(?=\\s|$)"
         },
-        "event-type_metro": {
-            "name": "keyword.other.event.type.metro.musicline",
+        "type_metro": {
+            "name": "keyword.other.type.metro.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2})metro(?=\\s|$)"
         },
-        "event-type_note": {
-            "name": "keyword.other.event.type.note.musicline",
+        "type_note": {
+            "name": "keyword.other.type.note.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2})note(?=\\s|$)"
         },
-        "event-type_rest": {
-            "name": "keyword.other.event.type.rest.musicline",
+        "type_rest": {
+            "name": "keyword.other.type.rest.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2})rest(?=\\s|$)"
         },
-        "event-type_tail": {
-            "name": "keyword.other.event.type.tail.musicline",
+        "type_tail": {
+            "name": "keyword.other.type.tail.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2})tail(?=\\s|$)"
         },
-        "event-data_marker": {
+        "data_marker": {
             "name": "string.unquoted.data.marker.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2}marker\\s+)[a-zA-Z\\d'_.-]*[a-zA-Z\\d']+(?=\\s|$)"
         },
-        "event-data_metro": {
+        "data_metro": {
             "name": "string.unquoted.data.metro.musicline",
-            "match": "(?<=^\\s*(\\S+\\s+){2}metro\\s+)(0|[1-9]\\d*)(\\.\\d+)?|\\.\\d+(?=\\s|$)"
+            "match": "(?<=^\\s*(\\S+\\s+){2}metro\\s+)((0|[1-9]\\d*)(\\.\\d+)?|\\.\\d+)(?=\\s|$)"
         },
-        "event-data_note": {
+        "data_note": {
             "name": "string.unquoted.data.note.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2}note\\s+)[^\\s\\\\]+(\\s+[^\\s\\\\]+)*(?=\\s*\\\\|\\s*$)"
         },
-        "event-data_note-muted": {
-            "name": "comment.line.number-sign.note.muted.musicline",
-            "match": "(?<=^\\s*(\\S+\\s+){2}note\\s+[^\\\\]*)\\\\(\\s*\\S+)*(?=\\s*$)"
+        "data_note-muted": {
+            "name": "comment.line.number-sign.data.note-muted.musicline",
+            "match": "(?<=^\\s*(\\S+\\s+){2}note\\s[^\\\\]*)\\\\(\\s*\\S+)*(?=\\s*$)"
         },
-        "event-data_short-form_note-muted": {
-            "name": "comment.line.number-sign.note.muted.short-form.musicline",
+        "short-form_data_note-muted": {
+            "name": "comment.line.number-sign.short-form.data.note-muted.musicline",
             "match": "(?<=^\\s*\\S+\\s+[^\\\\0-9]*[^\\\\]*)\\\\(\\s*\\S+)*(?=\\s*$)"
         },
-        "event-data_short-form_note-muted-after-tick": {
-            "name": "comment.line.number-sign.note.muted.short-form.musicline",
+        "short-form_data_note-muted-after-backtick": {
+            "name": "comment.line.number-sign.short-form.data.note-muted-after-backtick.musicline",
             "match": "(?<=^\\s*\\S+\\s+`\\s*)\\\\(\\s*\\S+)*(?=\\s*$)"
         },
-        "event-data_short-form_tick-before-note": {
-            "name": "comment.line.number-sign.note.tick.musicline",
+        "short-form_data_backtick-before-note": {
+            "name": "comment.line.number-sign.short-form.data.backtick-before-note.musicline",
             "match": "(?<=^\\s*\\S+\\s+)`"
         },
-        "event-data_short-form_note": {
-            "name": "string.unquoted.data.note.short-form.musicline",
+        "short-form_data_note": {
+            "name": "string.unquoted.short-form.data.note.musicline",
             "match": "(?<=^\\s*\\S+\\s+)[^\\s\\\\`0-9][^\\s\\\\]*(\\s+[^\\s\\\\]+)*(?=\\s*\\\\|\\s*$)"
         },
-        "event-data_short-form_note-after-tick": {
-            "name": "string.unquoted.data.note.ticked.short-form.musicline",
+        "short-form_data_note-after-backtick": {
+            "name": "string.unquoted.short-form.data.note-after-backtick.musicline",
             "match": "(?<=^\\s*\\S+\\s+`\\s*)[^\\s\\\\]+(\\s+[^\\s\\\\]+)*(?=\\s*\\\\|\\s*$)"
         }
     }
