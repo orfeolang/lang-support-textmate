@@ -1,3 +1,37 @@
+Think about how the backtick works... with \
+
+123.456 on \ off \ on \off\on\off\
+123.456 ` on \\off\on\off\on\off\
+
+1 1 note    \ off
+1 1 note    on
+
+1 1 note \off
+1 1 note \ off
+1 1 note \off\
+1 1 note \ off \
+1 1 note on
+1 1 note on\off
+1 1 note on \ off
+1 1 note on \ off \
+1 1 note on\off\on\off\
+1 1 note on\off\on\ off \
+1 1 note on\off\on\off
+1 1 note on\off\on\ off
+1 1 note on on \ off off \ on on \ off
+1 1 note on\off\on\off\on
+1 1 note on \ off \ on \ off \ on
+1 1 note on\\on\\on
+1 1 note on \\ on \\ on
+1 1 note \\on\\on\\
+1 1 note \\ on on \\ on on \\
+1 1 note on\\\off\\\on
+1 1 note on \ \ \ \ on \ \ \ \ on
+
+1 1 note This is a long text \ this is off \ and back on
+1 1 note \ this is off \ this is some text that is on \ off again, \ and on...
+
+
 # Musicline Syntax Highlighter Tests
 # v0.2.0
 # Copyright 2024 Pierre-Emmanuel Lévesque
@@ -69,8 +103,8 @@
 1.2     1     note   More than one word.    
 1.2     1     note ` Backtick starts are not ignored.
 1.2     1_2_3 note    \muted
-    3   4     note    \    muted
-    4   4     note    note \ Partially muted.
+    3   4     note     \    muted
+    4   4     note     note \ Partially muted.
     5   4     note    abc\def
     6   4     note ` abc\Mute when starting with a backtick.
     7   4     note abc\def\ghi More than one muting backslash.
