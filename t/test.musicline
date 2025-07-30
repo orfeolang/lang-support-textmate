@@ -1,3 +1,26 @@
+
+
+
+1 1 note on
+1 1 note \off
+1 1 note \off\
+1 1 note \ off \
+1 1 note \    off    \
+
+
+
+1 1 note \off
+1 1 note on\off
+1 1 note on\off\
+1 1 note on\off\on
+1 1 note on\off\on\
+1 1 note on\off\on\off
+1 1 note \\on
+1 1 note \\\off
+
+
+
+
 # Musicline Syntax Highlighter Tests
 # v0.2.0
 # Copyright 2024 Pierre-Emmanuel Lévesque
