@@ -16,11 +16,11 @@
         { "include": "#data_metro" },
         { "include": "#data_note" },
         { "include": "#data_note-muted" },
-        { "include": "#_short-form_data_note-muted" },
-        { "include": "#_short-form_data_note-muted-after-backtick" },
-        { "include": "#_short-form_data_backtick-before-note" },
-        { "include": "#_short-form_data_note" },
-        { "include": "#_short-form_data_note-after-backtick" }
+        { "include": "#short-form_data_note-muted" },
+        { "include": "#short-form_data_note-muted-after-backtick" },
+        { "include": "#short-form_data_backtick-before-note" },
+        { "include": "#short-form_data_note" },
+        { "include": "#short-form_data_note-after-backtick" }
     ],
     "repository": {
         "comment_line": {
