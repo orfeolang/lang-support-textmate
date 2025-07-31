@@ -14,7 +14,8 @@
         { "include": "#type_tail" },
         { "include": "#data_marker" },
         { "include": "#data_metro" },
-        { "include": "#data_note_and_data_note-muted" },
+        { "include": "#data_note" },
+        { "include": "#data_note-muted" },
         { "include": "#_short-form_data_note-muted" },
         { "include": "#_short-form_data_note-muted-after-backtick" },
         { "include": "#_short-form_data_backtick-before-note" },
@@ -63,12 +64,13 @@
             "name": "string.unquoted.data.metro.musicline",
             "match": "(?<=^\\s*(\\S+\\s+){2}metro\\s+)((0|[1-9]\\d*)(\\.\\d+)?|\\.\\d+)(?=\\s|$)"
         },
-        "data_note_and_data_note-muted": {
-            "captures": {
-                "2": { "name": "string.unquoted.data.note.musicline" },
-                "5": { "name": "comment.line.number-sign.data.note-muted.musicline" }
-            },
-            "match": "(?<=^\\s*(\\S+\\s+){2}note\\s+)([^\\s\\\\]+(\\s+[^\\s\\\\]+)*)(?=\\s*$)| (?<=^\\s*(\\S+\\s+){2}note\\s[^\\\\]*)(\\\\(\\s*[^\\s\\\\]+(\\s+[^\\s\\\\]+)*\\s*\\\\?)?)(?=\\s*$)"
+        "data_note": {
+            "name": "string.unquoted.data.note.musicline",
+            "match": "(?<=^\\s*(\\S+\\s+){2}note\\s+([^\\\\]*\\\\){2}*\\s*)[^\\s\\\\]+(\\s+[^\\s\\\\]+)*(?=\\s*(\\\\|$))"
+        },
+        "data_note-muted": {
+            "name": "comment.line.number-sign.data.note-muted.musicline",
+            "match": "(?<=^\\s*(\\S+\\s+){2}note\\s+[^\\\\]*(\\\\[^\\\\]*){2}*)\\\\(\\s*[^\\s\\\\]+)*(\\s*\\\\|(?=\\s*$))"
         },
         "short-form_data_note-muted": {
             "name": "comment.line.number-sign.short-form.data.note-muted.musicline",
