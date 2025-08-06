@@ -4,11 +4,11 @@
     "scopeName": "source.orfeo",
     "fileTypes": [ "orfeo" ],
     "patterns": [
-        { "include": "#comment-block-#_done" },
-        { "include": "#comment-atomic-with-music-expression" },
-        { "include": "#comment-block" },
-        { "include": "#comment-line" },
-        { "include": "#comment-atomic" },
+        { "include": "#comment_block-#_end" },
+        { "include": "#comment_line_atomic-with-music-expression" },
+        { "include": "#comment_block" },
+        { "include": "#comment_line" },
+        { "include": "#comment_line_atomic" },
         { "include": "#muting-backslash-with-repeater-dash-dot-notes" },
         { "include": "#muting-backslash-with-music-expression" },
         { "include": "#muting-backslash" },
@@ -27,16 +27,16 @@
         { "include": "#barline" }
     ],
     "repository": {
-        "comment-block-#_done": {
-            "contentName": "comment.block.orfeo",
-            "begin": "(?<=^\\s*#_done\\s*$)",
+        "comment_block-#_end": {
+            "contentName": "comment.block.end.orfeo",
+            "begin": "(?<=^\\s*#_end\\s*$)",
             "end": ""
         },
-        "comment-atomic-with-music-expression": {
-            "name": "comment.line.number-sign.orfeo",
-            "match": "(?<=^|[\\s()])#\\\\?\\^*,*\\([^\\(]*(\\([^\\(]*(\\([^\\(]*(\\([^\\(]*(\\([^\\(]*\\)[^\\(]*)*\\)[^\\(]*)*\\)[^\\(]*)*\\)[^\\(]*)*\\)(?=[\\s()]|$)"
+        "comment_line_atomic-with-music-expression": {
+            "name": "comment.line.number-sign.atomic-with-music-expression.orfeo",
+            "match": "(?<=^|[\\s()])#\\\\?\\^*,*\\([^\\(\\)]*(\\([^\\(\\)]*(\\([^\\(\\)]*(\\([^\\(\\)]*(\\([^\\(\\)]*\\)[^\\(\\)]*)*\\)[^\\(\\)]*)*\\)[^\\(\\)]*)*\\)[^\\(\\)]*)*\\)"
         },
-        "comment-block": {
+        "comment_block": {
             "patterns": [
                 {
                     "name": "comment.block.orfeo",
@@ -70,13 +70,13 @@
                 }
             ]
         },
-        "comment-line": {
+        "comment_line": {
             "name": "comment.line.number-sign.orfeo",
             "begin": "#\\s|##",
             "end": "$"
         },
-        "comment-atomic": {
-            "name": "comment.line.number-sign.orfeo",
+        "comment_atomic": {
+            "name": "comment.line.number-sign.atomic.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()]*(?=[\\s()]|$)"
         },
         "muting-backslash-with-repeater-dash-dot-notes": {
