@@ -4,80 +4,143 @@
     "scopeName": "source.orfeo",
     "fileTypes": [ "orfeo" ],
     "patterns": [
-        { "include": "#nested-curly-brackets" },
-        { "include": "#comment_block-#_end" },
-        { "include": "#comment_line_atomic-with-music-expression" },
+        { "include": "#pragma_end"},
+        { "include": "#comment_block_#_end" },
         { "include": "#comment_block" },
         { "include": "#comment_line" },
-        { "include": "#comment_line_atomic" },
-        { "include": "#muting-backslash-with-repeater-dash-dot-notes" },
-        { "include": "#muting-backslash-with-music-expression" },
-        { "include": "#muting-backslash" },
-        { "include": "#note-container" },
-        { "include": "#note-backtick" },
-        { "include": "#note" },
-        { "include": "#rest" },
-        { "include": "#duration" },
-        { "include": "#music-expression-duration" },
-        { "include": "#metronome" },
-        { "include": "#marker" },
-        { "include": "#rhythm-flags" },
-        { "include": "#rhythm-dots" },
-        { "include": "#repeater-dot" },
-        { "include": "#repeater-dash" },
-        { "include": "#barline" }
+        { "include": "#comment_atomic" }
     ],
     "repository": {
-        "nested-curly-brackets": {
-            "name": "comment.block.end.orfeo",
-            "begin": "\\{",
-            "end": "\\}",
+        "pragma_end": {
+            "name": "variable.parameter.pragma.end.orfeo",
+            "match": "(?<=^\\s*)#_end(?=\\s*$)"
+        },
+        "comment_block_#_end": {
+            "contentName": "comment.block.end.orfeo",
+            "begin": "(?<=^\\s*#_end\\s*$)",
+            "end": "(?=\\\\Z)"
+        },
+        "_nested-parentheses": {
+            "name": "comment.block.orfeo",
+            "begin": "\\(",
+            "end": "\\)",
             "patterns": [
                 {
-                    "include": "#nested-curly-brackets"
+                    "include": "#_nested-parentheses"
                 }
             ]
         },
-        "comment_block-#_end": {
-            "contentName": "comment.block.end.orfeo",
-            "begin": "(?<=^\\s*#_end\\s*$)",
-            "end": ""
+        "_nested-pointy-bracket": {
+            "name": "comment.block.orfeo",
+            "begin": "<",
+            "end": ">",
+            "patterns": [
+                {
+                    "include": "#_nested-pointy-bracket"
+                }
+            ]
         },
-        "comment_line_atomic-with-music-expression": {
-            "name": "comment.line.number-sign.atomic-with-music-expression.orfeo",
-            "match": "(?<=^|[\\s()])#\\\\?\\^*,*\\([^\\(\\)]*(\\([^\\(\\)]*(\\([^\\(\\)]*(\\([^\\(\\)]*(\\([^\\(\\)]*\\)[^\\(\\)]*)*\\)[^\\(\\)]*)*\\)[^\\(\\)]*)*\\)[^\\(\\)]*)*\\)"
+        "_nested-square-bracket": {
+            "name": "comment.block.orfeo",
+            "begin": "\\[",
+            "end": "\\]",
+            "patterns": [
+                {
+                    "include": "#_nested-square-bracket"
+                }
+            ]
+        },
+        "_nested-curly-bracket": {
+            "name": "comment.block.orfeo",
+            "begin": "{",
+            "end": "}",
+            "patterns": [
+                {
+                    "include": "#_nested-curly-bracket"
+                }
+            ]
+        },
+        "_nested-guillemets": {
+            "name": "comment.block.orfeo",
+            "begin": "«",
+            "end": "»",
+            "patterns": [
+                {
+                    "include": "#_nested-guillemets"
+                }
+            ]
+        },
+        "_nested-halfwidth-corner-bracket": {
+            "name": "comment.block.orfeo",
+            "begin": "｢",
+            "end": "｣",
+            "patterns": [
+                {
+                    "include": "#_nested-halfwidth-corner-bracket"
+                }
+            ]
         },
         "comment_block": {
             "patterns": [
                 {
                     "name": "comment.block.orfeo",
                     "begin": "#\\\\?\\^*,*\\(",
-                    "end": "\\)"
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#_nested-parentheses"
+                        }
+                    ]
                 },
                 {
                     "name": "comment.block.orfeo",
                     "begin": "#\\\\?\\^*,*<",
-                    "end": ">"
+                    "end": ">",
+                    "patterns": [
+                        {
+                            "include": "#_nested-pointy-bracket"
+                        }
+                    ]
                 },
                 {
                     "name": "comment.block.orfeo",
                     "begin": "#\\\\?\\^*,*\\[",
-                    "end": "\\]"
+                    "end": "\\]",
+                    "patterns": [
+                        {
+                            "include": "#_nested-square-bracket"
+                        }
+                    ]
                 },
                 {
                     "name": "comment.block.orfeo",
                     "begin": "#\\\\?\\^*,*{",
-                    "end": "}"
+                    "end": "}",
+                    "patterns": [
+                        {
+                            "include": "#_nested-curly-bracket"
+                        }
+                    ]
                 },
                 {
                     "name": "comment.block.orfeo",
                     "begin": "#\\\\?\\^*,*«",
-                    "end": "»"
+                    "end": "»",
+                    "patterns": [
+                        {
+                            "include": "#_nested-guillemets"
+                        }
+                    ]
                 },
                 {
                     "name": "comment.block.orfeo",
                     "begin": "#\\\\?\\^*,*｢",
-                    "end": "｣"
+                    "end": "｣",
+                    "patterns": [
+                        {
+                            "include": "#_nested-halfwidth-corner-bracket"
+                        }
+                    ]
                 }
             ]
         },
@@ -89,79 +152,6 @@
         "comment_atomic": {
             "name": "comment.line.number-sign.atomic.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()]*(?=[\\s()]|$)"
-        },
-        "muting-backslash-with-repeater-dash-dot-notes": {
-            "captures": {
-                "1": { "name": "keyword.other.orfeo" },
-                "2": { "name": "constant.character.orfeo" },
-                "3": { "name": "variable.other.orfeo" },
-                "11": { "name": "comment.line.number-sign.strikethrough.orfeo" }
-            },
-            "match": "(?<=^|[\\s()])(\\\\)(\\^*,*)((\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?)?(-|\\.|<[^>]*>|(`[^\\s()]+)|(([a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+][a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-'!?._0-9])|[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼]))(?=[\\s()]|$)"
-        },
-        "muting-backslash-with-music-expression": {
-            "captures": {
-                "1": { "name": "keyword.other.orfeo" },
-                "2": { "name": "constant.character.orfeo" },
-                "3": { "name": "comment.line.number-sign.strikethrough.orfeo" }
-            },
-            "match": "(?<=^|[\\s()])(\\\\)(\\^*,*)(\\([^\\(]*(\\([^\\(]*(\\([^\\(]*(\\([^\\(]*(\\([^\\(]*\\)[^\\(]*)*\\)[^\\(]*)*\\)[^\\(]*)*\\)[^\\(]*)*\\))(?=[\\s()]|$)"
-        },
-        "muting-backslash": {
-            "name": "keyword.other.orfeo",
-            "match": "(?<=^|[\\s()])\\\\(?=[\\^,\\d(])"
-        },
-        "note-container": {
-            "name": "string.quoted.other.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])<[^>]*>(?=[\\s()]|$)"
-        },
-        "note-backtick": {
-            "name": "string.quoted.other.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])`[^\\s()]+(?=[\\s()]|$)"
-        },
-        "note": {
-            "name": "string.unquoted.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])(([a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+][a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-'!?._0-9])|[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼])(?=[\\s()]|$)"
-        },
-        "rest": {
-            "name": "constant.character.rest.orfeo",
-            "match": "(?<=^|[\\s()\\^,\\d])_(?=[\\s()]|$)"
-        },
-        "duration": {
-            "name": "constant.numeric.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
-        },
-        "music-expression-duration": {
-            "name": "variable.other.orfeo",
-            "match": "(?<=^|[\\s()|])=(f|flex|(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?)(?=[\\s()]|$)"
-        },
-        "metronome": {
-            "name": "variable.other.orfeo",
-            "match": "(?<=^|[\\s()])(;|♩)(\\+|-)?(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(s|seconds|ms|milliseconds)?(?=[\\s()]|$)"
-        },
-        "marker": {
-            "name": "variable.other.orfeo",
-            "match": "(?<=^|[\\s()])@[a-zA-Z\\d'_.-]*[a-zA-Z\\d'](?=[\\s()]|$)"
-        },
-        "rhythm-flags": {
-            "name": "keyword.other.orfeo",
-            "match": "(?<=^|[\\s()\\\\])\\^+(?=[,\\d(<`a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
-        },
-        "rhythm-dots": {
-            "name": "keyword.other.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^]),+(?=[\\d(<`a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
-        },
-        "repeater-dot": {
-            "name": "constant.character.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])\\.(?=[\\s()]|$)"
-        },
-        "repeater-dash": {
-            "name": "constant.character.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])\\-(?=[\\s()]|$)"
-        },
-        "barline": {
-            "name": "keyword.other.orfeo",
-            "match": "(?<=^|\\s)\\|(?=[\\s=]|$)"
         }
     }
 }
