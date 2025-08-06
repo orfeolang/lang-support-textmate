@@ -4,6 +4,7 @@
     "scopeName": "source.orfeo",
     "fileTypes": [ "orfeo" ],
     "patterns": [
+        { "include": "#nested-curly-brackets" },
         { "include": "#comment_block-#_end" },
         { "include": "#comment_line_atomic-with-music-expression" },
         { "include": "#comment_block" },
@@ -27,6 +28,16 @@
         { "include": "#barline" }
     ],
     "repository": {
+        "nested-curly-brackets": {
+            "name": "comment.block.end.orfeo",
+            "begin": "\\{",
+            "end": "\\}",
+            "patterns": [
+                {
+                    "include": "#nested-curly-brackets"
+                }
+            ]
+        },
         "comment_block-#_end": {
             "contentName": "comment.block.end.orfeo",
             "begin": "(?<=^\\s*#_end\\s*$)",
