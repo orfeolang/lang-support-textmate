@@ -13,6 +13,9 @@
         { "include": "#note-alone-muted" },
         { "include": "#note-alone" },
 
+        { "include": "#note-first-muted" },
+        { "include": "#note-first" },
+
         { "include": "#_muting-backslash-with-repeater-dash-dot-and-notes" },
         { "include": "#_muting-backslash-with-music-expression" },
         { "include": "#_muting-backslash_IS-NEEDED???" },
@@ -184,6 +187,17 @@
             "name": "string.unquoted.orfeo",
             "match": "(?<=^|[\\s()\\^,\\d])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼](?=[\\s()]|$)"
         },
+
+
+        "note-first-muted": {
+            "name": "comment.line.number-sign.strikethrough.orfeo",
+            "match": "(?<=\\\\\\^*,*((\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?)?)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+](?=[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9])"
+        },
+        "note-first": {
+            "name": "string.unquoted.orfeo",
+            "match": "(?<=^|[\\s()\\^,\\d])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+](?=[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9])"
+        },
+
 
 
 
