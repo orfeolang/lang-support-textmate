@@ -8,7 +8,10 @@
         { "include": "#comment_block_#_end" },
         { "include": "#comment_block" },
         { "include": "#comment_line" },
-        { "include": "#comment_atomic" }
+        { "include": "#comment_atomic" },
+        { "include": "#metronome" },
+        { "include": "#marker" },
+        { "include": "#barline" }
     ],
     "repository": {
         "pragma_end": {
@@ -152,6 +155,18 @@
         "comment_atomic": {
             "name": "comment.line.number-sign.atomic.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()]*(?=[\\s()]|$)"
+        },
+        "metronome": {
+            "name": "variable.other.metronome.orfeo",
+            "match": "(?<=^|[\\s()])(;|♩)(\\+|-)?(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(s|seconds|ms|milliseconds)?(?=[\\s()]|$)"
+        },
+        "marker": {
+            "name": "variable.other.marker.orfeo",
+            "match": "(?<=^|[\\s()])@[a-zA-Z\\d'_.-]*[a-zA-Z\\d']+(?=[\\s()]|$)"
+        },
+        "barline": {
+            "name": "keyword.other.barline.orfeo",
+            "match": "(?<=^|[\\s()])\\|(?=[\\s()=]|$)"
         }
     }
 }
