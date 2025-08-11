@@ -15,6 +15,7 @@
         { "include": "#rhythm-dots" },
         { "include": "#backtick-for-note" },
         { "include": "#note-backtick" },
+        { "include": "#note-backtick-muted" },
         { "include": "#repeater-dash" },
         { "include": "#repeater-dot" },
         { "include": "#rest" },
@@ -194,7 +195,11 @@
         },
         "note-backtick": {
             "name": "string.quoted.note-backtick.orfeo",
-            "match": "(?<=(^|[\\s()\\\\\\^,\\d])`)[^\\s()]+(?=[\\s()]|$)"
+            "match": "(?<=(^|[\\s()\\\\\\^,\\d])`([^()\\s\\\\]*\\\\){2}*)[^\\s()\\\\]+(?=[\\s()\\\\]|$)"
+        },
+        "note-backtick-muted": {
+            "name": "comment.line.number-sign.data.note-backtick-muted.musicline",
+            "match": "(?<=(^|[\\s()\\\\\\^,\\d])`[^()\\s\\\\]*(\\\\[^()\\s\\\\]*){2}*)\\\\[^\\s()\\\\]*(\\\\|(?=[\\s()]|$))"
         },
         "repeater-dash": {
             "name": "constant.character.repeater-dash.orfeo",
