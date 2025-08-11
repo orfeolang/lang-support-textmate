@@ -12,7 +12,13 @@
         { "include": "#music-expression-duration" },
         { "include": "#metronome" },
         { "include": "#marker" },
-        { "include": "#barline" }
+        { "include": "#barline" },
+
+
+
+
+
+        { "include": "#MUTING-EXPRESSION-TEST" }
     ],
     "repository": {
         "pragma_end": {
@@ -172,6 +178,43 @@
         "barline": {
             "name": "keyword.other.barline.orfeo",
             "match": "(?<=^|[\\s()])\\|(?=[\\s()=]|$)"
+        },
+
+
+
+
+
+        "_abc": {
+            "name": "string.unquoted.orfeo",
+            "match": "(?<=^|[\\s()])abc(?=[\\s()]|$)"
+        },
+        "_def": {
+            "name": "string.unquoted.orfeo",
+            "match": "(?<=^|[\\s()])def(?=[\\s()]|$)"
+        },
+        "_music-expression-content": {
+            "begin": "\\(",
+            "end": "\\)",
+            "patterns": [
+                {
+                    "include": "#_abc"
+                },
+                {
+                    "include": "#_def"
+                },
+                {
+                    "include": "#_music-expression-content"
+                }
+            ]
+        },
+        "MUTING-EXPRESSION-TEST": {
+            "begin": "(?<=(^|[\\s()])\\\\\\^*,*\\()",
+            "end": "(?=\\))",
+            "patterns": [
+                {
+                    "include": "#_music-expression-content"
+                }
+            ]
         }
     }
 }
