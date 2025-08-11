@@ -9,6 +9,13 @@
         { "include": "#comment_block" },
         { "include": "#comment_line" },
         { "include": "#comment_atomic" },
+        { "include": "#muting-backslash" },
+        { "include": "#duration" },
+        { "include": "#rhythm-flags" },
+        { "include": "#rhythm-dots" },
+        { "include": "#repeater-dash" },
+        { "include": "#repeater-dot" },
+        { "include": "#rest" },
         { "include": "#music-expression-duration" },
         { "include": "#metronome" },
         { "include": "#marker" },
@@ -162,6 +169,34 @@
         "comment_atomic": {
             "name": "comment.line.number-sign.atomic.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()]*(?=[\\s()]|$)"
+        },
+        "muting-backslash": {
+            "name": "keyword.other.muting-backslash.orfeo",
+            "match": "(?<=^|[\\s()])\\\\(?=[\\^,\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+])"
+        },
+        "duration": {
+            "name": "constant.numeric.duration.orfeo",
+            "match": "(?<=^|[\\s()\\\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "rhythm-flags": {
+            "name": "keyword.other.rhythm-flags.orfeo",
+            "match": "(?<=^|[\\s()\\\\])\\^+(?=[,\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "rhythm-dots": {
+            "name": "keyword.other.rhythm-dots.orfeo",
+            "match": "(?<=^|[\\s()\\\\\\^]),+(?=[\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "repeater-dash": {
+            "name": "constant.character.repeater-dash.orfeo",
+            "match": "(?<=^|[\\s()\\\\\\^,\\d])\\-(?=[\\s()]|$)"
+        },
+        "repeater-dot": {
+            "name": "constant.character.repeater-dot.orfeo",
+            "match": "(?<=^|[\\s()\\\\\\^,\\d])\\.(?=[\\s()]|$)"
+        },
+        "rest": {
+            "name": "constant.character.rest.orfeo",
+            "match": "(?<=^|[\\s()\\^,\\d])_(?=[\\s()]|$)"
         },
         "music-expression-duration": {
             "name": "variable.other.music-expression-duration.orfeo",
