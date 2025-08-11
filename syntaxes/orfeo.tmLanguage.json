@@ -13,6 +13,8 @@
         { "include": "#duration" },
         { "include": "#rhythm-flags" },
         { "include": "#rhythm-dots" },
+        { "include": "#backtick-for-note" },
+        { "include": "#note-backtick" },
         { "include": "#repeater-dash" },
         { "include": "#repeater-dot" },
         { "include": "#rest" },
@@ -185,6 +187,14 @@
         "rhythm-dots": {
             "name": "keyword.other.rhythm-dots.orfeo",
             "match": "(?<=^|[\\s()\\\\\\^]),+(?=[\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "backtick-for-note": {
+            "name": "constant.character.backtick-for-note.orfeo",
+            "match": "(?<=^|[\\s()\\\\\\^,\\d])`(?=[^\\s()])"
+        },
+        "note-backtick": {
+            "name": "string.quoted.note-backtick.orfeo",
+            "match": "(?<=(^|[\\s()\\\\\\^,\\d])`)[^\\s()]+(?=[\\s()]|$)"
         },
         "repeater-dash": {
             "name": "constant.character.repeater-dash.orfeo",
