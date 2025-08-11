@@ -9,6 +9,7 @@
         { "include": "#comment_block" },
         { "include": "#comment_line" },
         { "include": "#comment_atomic" },
+        { "include": "#music-expression-duration" },
         { "include": "#metronome" },
         { "include": "#marker" },
         { "include": "#barline" }
@@ -155,6 +156,10 @@
         "comment_atomic": {
             "name": "comment.line.number-sign.atomic.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()]*(?=[\\s()]|$)"
+        },
+        "music-expression-duration": {
+            "name": "variable.other.music-expression-duration.orfeo",
+            "match": "(?<=^|[\\s()|])=(flex|f|(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?)(?=[\\s()]|$)"
         },
         "metronome": {
             "name": "variable.other.metronome.orfeo",
