@@ -1,37 +1,3 @@
-Think about how the backtick works... with \
-
-123.456 on \ off \ on \off\on\off\
-123.456 ` on \\off\on\off\on\off\
-
-1 1 note    \ off
-1 1 note    on
-
-1 1 note \off
-1 1 note \ off
-1 1 note \off\
-1 1 note \ off \
-1 1 note on
-1 1 note on\off
-1 1 note on \ off
-1 1 note on \ off \
-1 1 note on\off\on\off\
-1 1 note on\off\on\ off \
-1 1 note on\off\on\off
-1 1 note on\off\on\ off
-1 1 note on on \ off off \ on on \ off
-1 1 note on\off\on\off\on
-1 1 note on \ off \ on \ off \ on
-1 1 note on\\on\\on
-1 1 note on \\ on \\ on
-1 1 note \\on\\on\\
-1 1 note \\ on on \\ on on \\
-1 1 note on\\\off\\\on
-1 1 note on \ \ \ \ on \ \ \ \ on
-
-1 1 note This is a long text \ this is off \ and back on
-1 1 note \ this is off \ this is some text that is on \ off again, \ and on...
-
-
 # Musicline Syntax Highlighter Tests
 # v0.2.0
 # Copyright 2024 Pierre-Emmanuel Lévesque
@@ -71,24 +37,48 @@ Think about how the backtick works... with \
 0 `` Two backticks in a row.
 0 `    `    Two backticks in a row with spaces before.
 
-    # Comment out after muting backslash.
-0 \muted
-0 \ muted
-0    \    Muted with many words.
-0 \muted \ With a second muting backslash.
-0 `\muted
-0 ` \muted
-0    ` \ muted
-0 ` ` \muted
-0 ` `no\te muted
-0 note \muted
-0 note    \    muted
-0 note    \muted
-0 note    \ Muted with many words.
-0 no\te Muted in the middle.
-0 `123 \muted
-0 ` 123 \ muted
-0 `no\te
+    # Comment out after one muting backslash.
+0 \off
+0 \ off
+0    \ off
+0    \ off with many words
+0 `\off
+0 ` \off
+0     ` \ off
+0     ` \ off with many words
+0 on\off
+0 on \ off
+0    on \ off
+0    on \ off with many words
+0 `on\off
+0 ` on \ off
+0     ` on \ off
+0     ` on \ off with many words
+
+    # Alternate commenting with multiple muting backlashes.
+0 on
+0 on \\ on
+0 on\\on \
+0 on \ off
+0 on\off \\
+0 on \\ on \ off \ off off \\ on on \\ on \ off
+0 on\\on\off\off\\on\\on\off\\
+0 on \ off \\ on \\ on on \ off off \ off \\ on
+0 on\off\\on\\on\off\off\\on
+0 \ off \\ on \ off \ off off \\ on on \\ on \ off
+0 \off\\on\off\off\\on\\on\off\\
+0 \ off \ off \\ on \\ on on \ off off \ off \\ on
+0 \off\off\\on\\on\off\off\\on
+0 `on \\ on \ off \ off off \\ on on \\ on \ off
+0 `\ off \\ on \ off \ off off \\ on on \\ on \ off
+0 on` \\ on \ off \ off off \\ on on \\ on \ off
+0 \` off \\ on \ off \ off off \\ on on \\ on \ off
+0 This is a long text \ this is off \\ and back on
+0 \this is off\\this is on\off again,\\and on...
+
+    # Using more than two muting backslashes in a row.
+0 on \\\ off \\\\ on \\\\\ off \\\\\\
+0 \\\ off \\\\ on \\\\\ off \\\\\\ on
 
 ######################################################################
 # Musicline long format. (point, voice, type, data)
@@ -112,6 +102,49 @@ Think about how the backtick works... with \
     9   4     rest    
 12.34   5 tail
 56.78   5 tail    
+
+    # Comment out after one muting backslash.
+0 1 note \off
+0 1 note \ off
+0 1 note    \ off
+0 1 note    \ off with many words
+0 1 note `\off
+0 1 note ` \off
+0 1 note     ` \ off
+0 1 note     ` \ off with many words
+0 1 note on\off
+0 1 note on \ off
+0 1 note    on \ off
+0 1 note    on \ off with many words
+0 1 note `on\off
+0 1 note ` on \ off
+0 1 note     ` on \ off
+0 1 note     ` on \ off with many words
+
+    # Alternate commenting with multiple muting backlashes.
+0 1 note on
+0 1 note on \\ on
+0 1 note on\\on \
+0 1 note on \ off
+0 1 note on\off \\
+0 1 note on \\ on \ off \ off off \\ on on \\ on \ off
+0 1 note on\\on\off\off\\on\\on\off\\
+0 1 note on \ off \\ on \\ on on \ off off \ off \\ on
+0 1 note on\off\\on\\on\off\off\\on
+0 1 note \ off \\ on \ off \ off off \\ on on \\ on \ off
+0 1 note \off\\on\off\off\\on\\on\off\\
+0 1 note \ off \ off \\ on \\ on on \ off off \ off \\ on
+0 1 note \off\off\\on\\on\off\off\\on
+0 1 note `on \\ on \ off \ off off \\ on on \\ on \ off
+0 1 note `\ off \\ on \ off \ off off \\ on on \\ on \ off
+0 1 note on` \\ on \ off \ off off \\ on on \\ on \ off
+0 1 note \` off \\ on \ off \ off off \\ on on \\ on \ off
+0 1 note This is a long text \ this is off \\ and back on
+0 1 note \this is off\\this is on\off again,\\and on...
+
+    # Using more than two muting backslashes in a row.
+0 1 note on \\\ off \\\\ on \\\\\ off \\\\\\
+0 1 note \\\ off \\\\ on \\\\\ off \\\\\\ on
 
 # --------------------------------------------------------------------
 #  Partials.
