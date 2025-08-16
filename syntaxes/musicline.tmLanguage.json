@@ -109,12 +109,18 @@
             "match": "(?<=^\\s*\\S+\\s+)[^\\s\\\\`0-9](\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
         },
         "short-form_data_note-subsequents": {
-            "name": "string.unquoted.short-form.data.note.musicline",
-            "match": "(?<=^\\s*\\S+\\s+.*\\\\{2}+)(?!\\\\)(\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
+            "match": "(?<=^\\s*\\S+\\s+.*)(\\\\{2}+)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
+            "captures": {
+                "1": { "name": "comment.line.number-sign.short-form.data.note-muted.musicline" },
+                "2": { "name": "string.unquoted.short-form.data.note.musicline" }
+            }
         },
         "short-form_data_note-muted": {
-            "name": "comment.line.number-sign.short-form.data.note-muted.musicline",
-            "match": "(?<=^\\s*\\S+\\s+.*\\\\{2}*\\\\)(?!\\\\)(\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
+            "match": "(?<=^\\s*\\S+\\s+.*)(\\\\{2}*\\\\)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
+            "captures": {
+                "1": { "name": "comment.line.number-sign.short-form.data.note-muted.musicline" },
+                "2": { "name": "comment.line.number-sign.short-form.data.note-muted.musicline" }
+            }
         }
     }
 }
