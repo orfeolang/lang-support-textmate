@@ -11,14 +11,14 @@ You must write a marker name after the marker sigil ｢@｣.
 
     # With sequence start icon until EOL -----------------------------
 
-===OOPS!=== Error between 1:1 and EOL
-1➤ ⭢<abc
+===OOPS!=== Error between 1:6 and EOL
+1➤ note ⭢<abc
 Unexpected end of line.
-The note container opened at 1:1 is not closed.
+The note container opened at 1:6 is not closed.
 
     # With sequence start icon until EOF -----------------------------
 
-===OOPS!=== Error between 1:1 and EOF
-1➤ ⭢#(
+===OOPS!=== Error between 1:6 and EOF
+1➤ note ⭢#(
 Unexpected end of file.
-The block comment opened at 1:1 is not closed.
+The block comment opened at 1:6 is not closed.
