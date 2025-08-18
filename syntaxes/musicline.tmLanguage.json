@@ -14,8 +14,8 @@
         { "include": "#type_tail"},
         { "include": "#data_marker" },
         { "include": "#data_metro" },
-        { "include": "#data-note-muted" },
-        { "include": "#data-note-active" },
+        { "include": "#data_note" },
+        { "include": "#data_note-muted" },
         { "include": "#short-form_data_backtick-before-note" },
         { "include": "#short-form_data_note-first-after-backtick" },
         { "include": "#short-form_data_note-first" },
@@ -64,47 +64,44 @@
             "name": "string.unquoted.data.metro.musicline",
             "match": "(?<=^\\s*\\S+\\s+[0-9]\\S*\\s+metro\\s+)(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(?=\\s|$)"
         },
-        "data-note-active": {
-            "name": "string.unquoted.data.note.active.musicline",
-            "match": "(?<=^\\s*\\S+\\s+[0-9]\\S*\\s+note\\s+.*)(\\\\{2}*)(?!\\\\)(\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))",
+        "data_note": {
+            "match": "(?<=^\\s*\\S+\\s+[0-9]\\S*\\s+note\\s+.*)(\\\\{2}*)(?!\\\\)((\\s*[^\\s\\\\]+)+)(?=\\s*(\\\\|$))",
             "captures": {
                 "1": { "name": "comment.line.number-sign.data.note.muting-backslash.musicline" },
-                "2": { "name": "string.unquoted.data.note.active.musicline" }
+                "2": { "name": "string.unquoted.data.note.musicline" }
             }
-
         },
-        "data-note-muted": {
-            "name": "comment.line.number-sign.data.note.muted.musicline",
-            "match": "(?<=^\\s*\\S+\\s+[0-9]\\S*\\s+note\\s+.*)(\\\\{2}*\\\\)(?!\\\\)(\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))",
+        "data_note-muted": {
+            "match": "(?<=^\\s*\\S+\\s+[0-9]\\S*\\s+note\\s+.*)(\\\\{2}*\\\\)(?!\\\\)((\\s*[^\\s\\\\]+)+)(?=\\s*(\\\\|$))",
             "captures": {
                 "1": { "name": "comment.line.number-sign.data.note.muting-backslash.musicline" },
-                "2": { "name": "comment.line.number-sign.short-form.data.note-muted.musicline" }
+                "2": { "name": "comment.line.number-sign.data.note.muted.musicline" }
             }
         },
         "short-form_data_backtick-before-note": {
-            "name": "comment.line.number-sign.short-form.data.backtick-before-note.musicline",
+            "name": "comment.line.number-sign.short-form.data.note.backtick-before-note.musicline",
             "match": "(?<=^\\s*\\S+\\s+)`"
         },
         "short-form_data_note-first-after-backtick": {
-            "name": "string.unquoted.short-form.data.note-after-backtick.musicline",
+            "name": "string.unquoted.data.note.musicline",
             "match": "(?<=^\\s*\\S+\\s+`\\s*)(\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
         },
         "short-form_data_note-first": {
-            "name": "string.unquoted.short-form.data.note.musicline",
+            "name": "string.unquoted.data.note.musicline",
             "match": "(?<=^\\s*\\S+\\s+)[^\\s\\\\`0-9](\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
         },
         "short-form_data_note-subsequents": {
             "match": "(?<=^\\s*\\S+\\s+.*)(\\\\{2}+)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
             "captures": {
                 "1": { "name": "comment.line.number-sign.data.note.muting-backslash.musicline" },
-                "2": { "name": "string.unquoted.short-form.data.note.musicline" }
+                "2": { "name": "string.unquoted.data.note.musicline" }
             }
         },
         "short-form_data_note-muted": {
             "match": "(?<=^\\s*\\S+\\s+.*)(\\\\{2}*\\\\)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
             "captures": {
                 "1": { "name": "comment.line.number-sign.data.note.muting-backslash.musicline" },
-                "2": { "name": "comment.line.number-sign.short-form.data.note-muted.musicline" }
+                "2": { "name": "comment.line.number-sign.data.note.muted.musicline" }
             }
         }
     }

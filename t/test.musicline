@@ -30,9 +30,9 @@
 
     # Comment out leading backtick.
 0 `123 backtick note starting with numbers.
-0 ` 456 backtick note starting with space then numbers.
+0 `    456 backtick note starting with space then numbers.
 0   `Backtick note with more than one space before.
-0 ` Backtick note with more than one space after.    
+0 `Backtick note with more than one space after.    
 0    `    Backtick note with spaces around.    
 0 `` Two backticks in a row.
 0 `    `    Two backticks in a row with spaces before.
