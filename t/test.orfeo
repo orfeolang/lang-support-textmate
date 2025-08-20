@@ -8,147 +8,83 @@
 -------------------------------------------------------------------- )
 
     # ----------------------------------------------------------------
+    # The #_end pragma for end of file commenting is tested at the end
+    # of this file.
+
+    # ----------------------------------------------------------------
     # Block comment.
 
     # Inline block comment.
 
-note #(        This is an inline block comment. ) note
-note #\(       This is an inline block comment. ) note
-note #^(       This is an inline block comment. ) note
-note #^^^(     This is an inline block comment. ) note
-note #.(       This is an inline block comment. ) note
-note #...(     This is an inline block comment. ) note
-note #\^(      This is an inline block comment. ) note
-note #\^^^(    This is an inline block comment. ) note
-note #\.(      This is an inline block comment. ) note
-note #\...(    This is an inline block comment. ) note
-note #\^.(     This is an inline block comment. ) note
-note #\^^^...( This is an inline block comment. ) note
-note #^.(      This is an inline block comment. ) note
-note #^^^...(  This is an inline block comment. ) note
+note #(        This is an inline block comment. () ) note
+note #\(       This is an inline block comment. () ) note
+note #^(       This is an inline block comment. () ) note
+note #^^^(     This is an inline block comment. () ) note
+note #,(       This is an inline block comment. () ) note
+note #,,,(     This is an inline block comment. () ) note
+note #\^(      This is an inline block comment. () ) note
+note #\^^^(    This is an inline block comment. () ) note
+note #\,(      This is an inline block comment. () ) note
+note #\,,,(    This is an inline block comment. () ) note
+note #\^,(     This is an inline block comment. () ) note
+note #\^^^,,,( This is an inline block comment. () ) note
+note #^,(      This is an inline block comment. () ) note
+note #^^^,,,(  This is an inline block comment. () ) note
 
-note #<        This is an inline block comment. > note
-note #\<       This is an inline block comment. > note
-note #^<       This is an inline block comment. > note
-note #^^^<     This is an inline block comment. > note
-note #.<       This is an inline block comment. > note
-note #...<     This is an inline block comment. > note
-note #\^<      This is an inline block comment. > note
-note #\^^^<    This is an inline block comment. > note
-note #\.<      This is an inline block comment. > note
-note #\...<    This is an inline block comment. > note
-note #\^.<     This is an inline block comment. > note
-note #\^^^...< This is an inline block comment. > note
-note #^.<      This is an inline block comment. > note
-note #^^^...<  This is an inline block comment. > note
+note #<        This is an inline block comment. <> > note
+note #\<       This is an inline block comment. <> > note
+note #^<       This is an inline block comment. <> > note
+note #^^^<     This is an inline block comment. <> > note
+note #,<       This is an inline block comment. <> > note
+note #,,,<     This is an inline block comment. <> > note
+note #\^<      This is an inline block comment. <> > note
+note #\^^^<    This is an inline block comment. <> > note
+note #\,<      This is an inline block comment. <> > note
+note #\,,,<    This is an inline block comment. <> > note
+note #\^,<     This is an inline block comment. <> > note
+note #\^^^,,,< This is an inline block comment. <> > note
+note #^,<      This is an inline block comment. <> > note
+note #^^^,,,<  This is an inline block comment. <> > note
 
-note #[        This is an inline block comment. ] note
-note #\[       This is an inline block comment. ] note
-note #^[       This is an inline block comment. ] note
-note #^^^[     This is an inline block comment. ] note
-note #.[       This is an inline block comment. ] note
-note #...[     This is an inline block comment. ] note
-note #\^[      This is an inline block comment. ] note
-note #\^^^[    This is an inline block comment. ] note
-note #\.[      This is an inline block comment. ] note
-note #\...[    This is an inline block comment. ] note
-note #\^.[     This is an inline block comment. ] note
-note #\^^^...[ This is an inline block comment. ] note
-note #^.[      This is an inline block comment. ] note
-note #^^^...[  This is an inline block comment. ] note
-
-note #{        This is an inline block comment. } note
-note #\{       This is an inline block comment. } note
-note #^{       This is an inline block comment. } note
-note #^^^{     This is an inline block comment. } note
-note #.{       This is an inline block comment. } note
-note #...{     This is an inline block comment. } note
-note #\^{      This is an inline block comment. } note
-note #\^^^{    This is an inline block comment. } note
-note #\.{      This is an inline block comment. } note
-note #\...{    This is an inline block comment. } note
-note #\^.{     This is an inline block comment. } note
-note #\^^^...{ This is an inline block comment. } note
-note #^.{      This is an inline block comment. } note
-note #^^^...{  This is an inline block comment. } note
-
-note #«        This is an inline block comment. » note
-note #\«       This is an inline block comment. » note
-note #^«       This is an inline block comment. » note
-note #^^^«     This is an inline block comment. » note
-note #.«       This is an inline block comment. » note
-note #...«     This is an inline block comment. » note
-note #\^«      This is an inline block comment. » note
-note #\^^^«    This is an inline block comment. » note
-note #\.«      This is an inline block comment. » note
-note #\...«    This is an inline block comment. » note
-note #\^.«     This is an inline block comment. » note
-note #\^^^...« This is an inline block comment. » note
-note #^.«      This is an inline block comment. » note
-note #^^^...«  This is an inline block comment. » note
-
-note #⦗        This is an inline block comment. ⦘ note
-note #\⦗       This is an inline block comment. ⦘ note
-note #^⦗       This is an inline block comment. ⦘ note
-note #^^^⦗     This is an inline block comment. ⦘ note
-note #.⦗       This is an inline block comment. ⦘ note
-note #...⦗     This is an inline block comment. ⦘ note
-note #\^⦗      This is an inline block comment. ⦘ note
-note #\^^^⦗    This is an inline block comment. ⦘ note
-note #\.⦗      This is an inline block comment. ⦘ note
-note #\...⦗    This is an inline block comment. ⦘ note
-note #\^.⦗     This is an inline block comment. ⦘ note
-note #\^^^...⦗ This is an inline block comment. ⦘ note
-note #^.⦗      This is an inline block comment. ⦘ note
-note #^^^...⦗  This is an inline block comment. ⦘ note
-
-note #｢        This is an inline block comment. ｣ note
-note #\｢       This is an inline block comment. ｣ note
-note #^｢       This is an inline block comment. ｣ note
-note #^^^｢     This is an inline block comment. ｣ note
-note #.｢       This is an inline block comment. ｣ note
-note #...｢     This is an inline block comment. ｣ note
-note #\^｢      This is an inline block comment. ｣ note
-note #\^^^｢    This is an inline block comment. ｣ note
-note #\.｢      This is an inline block comment. ｣ note
-note #\...｢    This is an inline block comment. ｣ note
-note #\^.｢     This is an inline block comment. ｣ note
-note #\^^^...｢ This is an inline block comment. ｣ note
-note #^.｢      This is an inline block comment. ｣ note
-note #^^^...｢  This is an inline block comment. ｣ note
+note #[        This is an inline block comment. [] ] note
+note #{        This is an inline block comment. {} } note
+note #«        This is an inline block comment. «» » note
+note #｢        This is an inline block comment. ｢｣ ｣ note
 
     # Many inline block comments on one line.
 
-note #\^.( comment ) note #\^.< comment > note
+note #\^,( comment () ) note #\^,< comment <> > note
 
     # Multiline block comment.
 
-#\^^^...(
+#\^^^,,,(
   This is a multiline block comment.
+  ( ( ) )
 )
 
-#\^^^...<
+#\^^^,,,<
   This is a multiline block comment.
+  < < > >
 >
 
-#\^^^...[
+#[
   This is a multiline block comment.
+  [ [ ] ]
 ]
 
-#\^^^...{
+#{
   This is a multiline block comment.
+  { { } }
 }
 
-#\^^^...«
+#«
   This is a multiline block comment.
+  « « » »
 »
 
-#\^^^...⦗
+#｢
   This is a multiline block comment.
-⦘
-
-#\^^^...｢
-  This is a multiline block comment.
+  ｢ ｢ ｣ ｣
 ｣
 
     # ----------------------------------------------------------------
@@ -157,6 +93,7 @@ note #\^.( comment ) note #\^.< comment > note
     # Line comment without double hashing.
 
 # From start of line.
+#   From start of line with spaces after #.
 note # After note.
 # With space after.    	
 
@@ -177,459 +114,13 @@ note #note note
 ()#note()
 #
 
-    # ----------------------------------------------------------------
-    # Restifier backslash with repeater dash and notes.
-
-\-
-\^^^-
-\...-
-\0-
-\4-
-\4.5-
-\4.5/4.5-
-\^^^...4.5/4.5-
-\^^^...0-
-\...4.5-
-\^^^4.5-
-\^^^...-
-
-\note
-\^^^note
-\...note
-\0note
-\4note
-\4.5note
-\4.5/4.5note
-\^^^...4.5/4.5note
-\^^^...0note
-\...4.5note
-\^^^4.5note
-\^^^...note
-
-\<note-container>
-\^^^<note-container>
-\...<note-container>
-\0<note-container>
-\4<note-container>
-\4.5<note-container>
-\4.5/4.5<note-container>
-\^^^...4.5/4.5<note-container>
-\^^^...0<note-container>
-\...4.5<note-container>
-\^^^4.5<note-container>
-\^^^...<note-container>
-
-\`backtick-note
-\^^^`backtick-note
-\...`backtick-note
-\0`backtick-note
-\4`backtick-note
-\4.5`backtick-note
-\4.5/4.5`backtick-note
-\^^^...4.5/4.5`backtick-note
-\^^^...0`backtick-note
-\...4.5`backtick-note
-\^^^4.5`backtick-note
-\^^^...`backtick-note
-
-    # ----------------------------------------------------------------
-    # Restifier backslash with repeater dot.
-
-\.
-
-    # ----------------------------------------------------------------
-    # Restifier backslash.
-
-\()
-
-   \note	    	
-(\note)
-()\note()
-
-    # ----------------------------------------------------------------
-    # Note container.
-
-<a>
-<a b c>
-< -[figure] "Hi", (42)>
-
-    <a>    	
-(<a>)
-()<a>()
-\<a>
-^^^<a>
-...<a>
-4<a>
-4.5<a>
-4.5/4.5<a>
-
-    # ----------------------------------------------------------------
-    # Note backtick.
-
-`abc
-`#abc😎.9
-
-    `abc	    	
-(`abc)
-()`abc()
-\`abc
-^^^`abc
-...`abc
-4`abc
-4.5`abc
-4.5/4.5`abc
-
-    # ----------------------------------------------------------------
-    # Note.
-
-a b c d e f g h i j k l m n o p q r s t u v w x y z
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-á é í ó ú â ê î ô û à è ù ë ï ü ç ñ
-Á É Í Ó Ú Â Ê Î Ô Û À È Ù Ë Ï Ü Ç Ñ
-
-'A'
-¡what!
-¿Est-ce_vrai?
-sound
-sound/[vol-12.3/rev-0.9]
-a,b,c
-F/A
-F♯/A♭
-
-    a    	
-(a)
-()a()
-\a
-^^^a
-...a
-4a
-4.5a
-4.5/4.5a
-
-    # ----------------------------------------------------------------
-    # Rest.
-
-_
-
-    _	    	
-(_)
-()_()
-^^^_
-..._
-0_
-4_
-4.5_
-4.5/4.5_
-
-    # ----------------------------------------------------------------
-    # Duration.
-
-0a
-4a
-4.5a
-0/0a
-4/4a
-4.5/4.5a
-
-4<a>
-4`a
-4_
-
-    4a	    	
-(4a)
-()4a()
-\4a
-^4a
-.4a
-
-    # ----------------------------------------------------------------
-    # Music expression duration.
-
-=f
-=flex
-=0
-=4
-=4.5
-=0/0
-=4/4
-=4.5/4.5
-=123.456/123.456
-
-note =flex note
-=flex
-    =flex    	
-(=flex)
-()=flex()
-|=flex
-
-    # ----------------------------------------------------------------
-    # Metronome.
-
-♩60
-
-!60
-!+3
-!-3
-!4
-!0
-!4.5
-!0/0
-!4/4
-!4.5/4.5
-!3s
-!3seconds
-!3ms
-!3milliseconds
-!-123/123.123s
-
-note !60 note
-!60
-    !60	    	
-(!60)
-()!60()
-
-    # ----------------------------------------------------------------
-    # Marker.
-
-@a @A @1 @'
-@section_1''
-@Time-12.12
-@_marker
-
-note @marker note
-@marker
-    @marker    	
-(@marker)
-()@marker()
-
-    # ----------------------------------------------------------------
-    # Rhythm flags.
-
-^^^()
-^^^...0a
-^^^0a
-^^^4a
-^^^<a>
-^^^`a
-^^^a
-^^^_
-
-    ^^^a	    	
-(^^^a)
-()^^^a()
-\^^^a
-
-    # ----------------------------------------------------------------
-    # Rhythm dots.
-
-...()
-...0a
-...4a
-...<a>
-...`a
-...a
-..._
-
-    ...a    	
-(...a)
-()...a()
-\...a
-^^^...a
-
-    # ----------------------------------------------------------------
-    # Repeater dot.
-
-. . .
-.)
-
-    .	    	
-(.)
-().
-\.
-
-    # ----------------------------------------------------------------
-    # Repeater dash.
-
-- - -
-
-    -	    	
-(-)
-()-()
-\-
-^-
-.-
-0-
-4-
-
-    # ----------------------------------------------------------------
-    # Barline.
-
-| | |
-|=flex
-
 #( -------------------------------------------------------------------
-  Failers.
-  Everything below must be uncolored.
+  Handle the #_end pragma.
+  #_end and everything after until the end of the file should
+  be commented out.
 -------------------------------------------------------------------- )
 
-    # ----------------------------------------------------------------
-    # Block comment.
-
-    # Fails with unsupported brackets.
-! #【  】 !
-
-    # ----------------------------------------------------------------
-    # Line comment.
-
-    # Fails when no space after the # sigil.
-! #$ !
-
-    # ----------------------------------------------------------------
-    # =finish
-
-! =finish
-=finish !
-! =finish !
-=finito
-
-    # ----------------------------------------------------------------
-    # Restifier backslash.
-
-\
-\$
-\[] # Unsuported brackets.
-
-    # ----------------------------------------------------------------
-    # Note container.
-
-<
->
-
-    # Fails when multilined.
-<note
-container>
-
-    # ----------------------------------------------------------------
-    # Note backtick.
-
-` ` `
-(`)
-()`()
-    `	    	
-
-    # ----------------------------------------------------------------
-    # Note.
-
-/a  # Bad start.
-a!a # Bad middle.
-a$  # Bad end.
-
-    # ----------------------------------------------------------------
-    # Rest.
-
-\_
-_\
-_^
-_.
-_/
-_4
-
-    # ----------------------------------------------------------------
-    # Duration.
-
-4\
-4^
-4.
-4/
-4/4/4
-
-    # ----------------------------------------------------------------
-    # Music expression duration.
-
-=unknown
-=flexy
-=4.
-=4/4/4
-
-    # Fails with leading zero.
-=01
-=1/01
-
-    # ----------------------------------------------------------------
-    # Metronome.
-
-!unknown
-!60.
-!a60
-!4.
-!4/4/4
-
-    # ----------------------------------------------------------------
-    # Marker.
-
-@
-
-    # Bad end.
-@a_
-@a.
-@a-
-
-@$ # Illegal characters.
-
-    # ----------------------------------------------------------------
-    # Rhythm flags.
-
-^^^
-^$
-
-    # ----------------------------------------------------------------
-    # Rhythm dots.
-
-...
-...$
-
-    # ----------------------------------------------------------------
-    # Repeater dot.
-
-.$
-$.
-
-    # ----------------------------------------------------------------
-    # Repeater dash.
-
--$
-$-
-
-    # ----------------------------------------------------------------
-    # Barline.
-
-||
-|$
-$|
-
-#( -------------------------------------------------------------------
-  Partials.
-  Partially colored.
--------------------------------------------------------------------- )
-
-\^^^
-\...
-\0
-\4
-
-^^^...
-...4
-^^^...4
-
-!60<abc>
-!60`abc
-
-#( -------------------------------------------------------------------
-  =finish
-  Handle the =finish special comment case.
-  =finish should be colored, and everything after should be comments.
--------------------------------------------------------------------- )
-
-=finish
-Comments start here until the end.
-    Comments continue here until the end.
+#_end
+Everything from here
+    to the end of the file    
+is commented out.

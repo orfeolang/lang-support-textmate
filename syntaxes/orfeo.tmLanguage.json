@@ -8,27 +8,7 @@
         { "include": "#comment_block_#_end" },
         { "include": "#comment_block" },
         { "include": "#comment_line" },
-        { "include": "#comment_atomic" },
-        { "include": "#muting-backslash" },
-        { "include": "#duration" },
-        { "include": "#rhythm-flags" },
-        { "include": "#rhythm-dots" },
-        { "include": "#backtick-for-note" },
-        { "include": "#note-backtick" },
-        { "include": "#note-backtick-muted" },
-        { "include": "#repeater-dash" },
-        { "include": "#repeater-dot" },
-        { "include": "#rest" },
-        { "include": "#music-expression-duration" },
-        { "include": "#metronome" },
-        { "include": "#marker" },
-        { "include": "#barline" },
-
-
-
-
-
-        { "include": "#MUTING-EXPRESSION-TEST" }
+        { "include": "#comment_atomic" }
     ],
     "repository": {
         "pragma_end": {
@@ -124,7 +104,7 @@
                 },
                 {
                     "name": "comment.block.orfeo",
-                    "begin": "#\\\\?\\^*,*\\[",
+                    "begin": "#\\[",
                     "end": "\\]",
                     "patterns": [
                         {
@@ -134,7 +114,7 @@
                 },
                 {
                     "name": "comment.block.orfeo",
-                    "begin": "#\\\\?\\^*,*{",
+                    "begin": "#{",
                     "end": "}",
                     "patterns": [
                         {
@@ -144,7 +124,7 @@
                 },
                 {
                     "name": "comment.block.orfeo",
-                    "begin": "#\\\\?\\^*,*«",
+                    "begin": "#«",
                     "end": "»",
                     "patterns": [
                         {
@@ -154,7 +134,7 @@
                 },
                 {
                     "name": "comment.block.orfeo",
-                    "begin": "#\\\\?\\^*,*｢",
+                    "begin": "#｢",
                     "end": "｣",
                     "patterns": [
                         {
@@ -167,104 +147,11 @@
         "comment_line": {
             "name": "comment.line.number-sign.orfeo",
             "begin": "#\\s|##",
-            "end": "$"
+            "end": "(?=$)"
         },
         "comment_atomic": {
             "name": "comment.line.number-sign.atomic.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()]*(?=[\\s()]|$)"
-        },
-        "muting-backslash": {
-            "name": "keyword.other.muting-backslash.orfeo",
-            "match": "(?<=^|[\\s()])\\\\(?=[\\^,\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+])"
-        },
-        "duration": {
-            "name": "constant.numeric.duration.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
-        },
-        "rhythm-flags": {
-            "name": "keyword.other.rhythm-flags.orfeo",
-            "match": "(?<=^|[\\s()\\\\])\\^+(?=[,\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
-        },
-        "rhythm-dots": {
-            "name": "keyword.other.rhythm-dots.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^]),+(?=[\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
-        },
-        "backtick-for-note": {
-            "name": "constant.character.backtick-for-note.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])`(?=[^\\s()])"
-        },
-        "note-backtick": {
-            "name": "string.quoted.note-backtick.orfeo",
-            "match": "(?<=(^|[\\s()\\\\\\^,\\d])`([^()\\s\\\\]*\\\\){2}*)[^\\s()\\\\]+(?=[\\s()\\\\]|$)"
-        },
-        "note-backtick-muted": {
-            "name": "comment.line.number-sign.data.note-backtick-muted.musicline",
-            "match": "(?<=(^|[\\s()\\\\\\^,\\d])`[^()\\s\\\\]*(\\\\[^()\\s\\\\]*){2}*)\\\\[^\\s()\\\\]*(\\\\|(?=[\\s()]|$))"
-        },
-        "repeater-dash": {
-            "name": "constant.character.repeater-dash.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])\\-(?=[\\s()]|$)"
-        },
-        "repeater-dot": {
-            "name": "constant.character.repeater-dot.orfeo",
-            "match": "(?<=^|[\\s()\\\\\\^,\\d])\\.(?=[\\s()]|$)"
-        },
-        "rest": {
-            "name": "constant.character.rest.orfeo",
-            "match": "(?<=^|[\\s()\\^,\\d])_(?=[\\s()]|$)"
-        },
-        "music-expression-duration": {
-            "name": "variable.other.music-expression-duration.orfeo",
-            "match": "(?<=^|[\\s()|])=(flex|f|(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?)(?=[\\s()]|$)"
-        },
-        "metronome": {
-            "name": "variable.other.metronome.orfeo",
-            "match": "(?<=^|[\\s()])(;|♩)(\\+|-)?(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(s|seconds|ms|milliseconds)?(?=[\\s()]|$)"
-        },
-        "marker": {
-            "name": "variable.other.marker.orfeo",
-            "match": "(?<=^|[\\s()])@[a-zA-Z\\d'_.-]*[a-zA-Z\\d']+(?=[\\s()]|$)"
-        },
-        "barline": {
-            "name": "keyword.other.barline.orfeo",
-            "match": "(?<=^|[\\s()])\\|(?=[\\s()=]|$)"
-        },
-
-
-
-
-
-        "_abc": {
-            "name": "string.unquoted.orfeo",
-            "match": "(?<=^|[\\s()])abc(?=[\\s()]|$)"
-        },
-        "_def": {
-            "name": "string.unquoted.orfeo",
-            "match": "(?<=^|[\\s()])def(?=[\\s()]|$)"
-        },
-        "_music-expression-content": {
-            "begin": "\\(",
-            "end": "\\)",
-            "patterns": [
-                {
-                    "include": "#_abc"
-                },
-                {
-                    "include": "#_def"
-                },
-                {
-                    "include": "#_music-expression-content"
-                }
-            ]
-        },
-        "MUTING-EXPRESSION-TEST": {
-            "begin": "(?<=(^|[\\s()])\\\\\\^*,*\\()",
-            "end": "(?=\\))",
-            "patterns": [
-                {
-                    "include": "#_music-expression-content"
-                }
-            ]
         }
     }
 }
