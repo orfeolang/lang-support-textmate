@@ -9,6 +9,9 @@
         { "include": "#comment_block" },
         { "include": "#comment_line" },
         { "include": "#comment_atomic" },
+        { "include": "#duration" },
+        { "include": "#rhythm-flags" },
+        { "include": "#rhythm-dots" },
         { "include": "#barline" },
         { "include": "#marker" },
         { "include": "#metronome" }
@@ -155,6 +158,18 @@
         "comment_atomic": {
             "name": "comment.line.number-sign.atomic.orfeo",
             "match": "(?<=^|[\\s()])#[^\\s()]*(?=[\\s()]|$)"
+        },
+        "duration": {
+            "name": "constant.numeric.duration.orfeo",
+            "match": "(?<=^|[\\s()\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "rhythm-flags": {
+            "name": "keyword.other.rhythm-flags.orfeo",
+            "match": "(?<=^|[\\s()\\\\])\\^+(?=[,\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "rhythm-dots": {
+            "name": "keyword.other.rhythm-dots.orfeo",
+            "match": "(?<=^|[\\s()\\\\^]),+(?=[\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
         },
         "barline": {
             "name": "keyword.other.barline.orfeo",
