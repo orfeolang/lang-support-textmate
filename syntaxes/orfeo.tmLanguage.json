@@ -12,6 +12,8 @@
         { "include": "#duration" },
         { "include": "#rhythm-flags" },
         { "include": "#rhythm-dots" },
+        { "include": "#repeater-dash" },
+        { "include": "#repeater-dot" },
         { "include": "#barline" },
         { "include": "#marker" },
         { "include": "#metronome" }
@@ -170,6 +172,14 @@
         "rhythm-dots": {
             "name": "keyword.other.rhythm-dots.orfeo",
             "match": "(?<=^|[\\s()\\\\^]),+(?=[\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "repeater-dash": {
+            "name": "constant.character.repeater-dash.orfeo",
+            "match": "(?<=^|[\\s()\\\\^,\\d])\\-(?=[\\s()]|$)"
+        },
+        "repeater-dot": {
+            "name": "constant.character.repeater-dot.orfeo",
+            "match": "(?<=^|[\\s()\\\\^,\\d])\\.(?=[\\s()]|$)"
         },
         "barline": {
             "name": "keyword.other.barline.orfeo",
