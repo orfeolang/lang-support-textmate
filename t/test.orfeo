@@ -95,24 +95,130 @@ note #\^,( comment () ) note #\^,< comment <> > note
 # From start of line.
 #   From start of line with spaces after #.
 note # After note.
-# With space after.    	
+# With space after.    
 
     # Line comment with double hashing.
 
 ##############################
 ##From start of line.
 note ##After note.
-##With space after.	    	
+##With space after.    
 
     # ----------------------------------------------------------------
     # Atomic comment.
 
 note #note note
 #note
-    #note    	
+    #note    
 (#note)
 ()#note()
 #
+
+    # ----------------------------------------------------------------
+    # Barline.
+
+| | |
+|=flex
+(|(|)|)
+
+    # ----------------------------------------------------------------
+    # Marker.
+
+@a @A @1 @'
+@section_1''
+@Time-12.12
+@_marker
+
+note @marker note
+@marker
+    @marker    
+(@marker)
+()@marker()
+
+    # ----------------------------------------------------------------
+    # Metronome.
+
+♩60
+
+;60
+;+3
+;-3
+;+3seconds
+;4
+;0
+;4.5
+;0/0
+;4/4
+;4.5/4.5
+;3s
+;3seconds
+;3ms
+;3milliseconds
+;-123/123.123s
+
+note ;60 note
+;60
+    ;60    
+(;60)
+();60()
+
+#( -------------------------------------------------------------------
+  Failers.
+  Everything below must be uncolored.
+-------------------------------------------------------------------- )
+
+    # ----------------------------------------------------------------
+    # #_end
+
+! #_end
+#_end !
+! #_end !
+
+    # ----------------------------------------------------------------
+    # Block comment.
+
+    # Fails with unsupported brackets.
+! #【  】 !
+
+    # The following brackets only work for commenting.
+[ ] { } « » ｢ ｣
+
+    # ----------------------------------------------------------------
+    # Line comment.
+
+    # Fails when no space after the # sigil.
+! #$ !
+
+    # ----------------------------------------------------------------
+    # Barline.
+
+||
+|$
+$|
+
+    # ----------------------------------------------------------------
+    # Marker.
+
+    # Lonely sigil.
+@
+
+    # Bad end.
+@a_
+@a.
+@a-
+
+    # Illegal characters.
+@$
+
+    # ----------------------------------------------------------------
+    # Metronome.
+
+;unknown   ♩unknown
+;+         ♩+
+;+seconds  ♩+seconds
+;60.       ♩60.
+;a60       ♩a60
+;4/4/4     ♩4/4/4
 
 #( -------------------------------------------------------------------
   Handle the #_end pragma.
