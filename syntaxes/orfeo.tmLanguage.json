@@ -13,6 +13,11 @@
         { "include": "#duration" },
         { "include": "#rhythm-flags" },
         { "include": "#rhythm-dots" },
+        { "include": "#note-backtick_backtick-before-note" },
+        { "include": "#note-backtick_first-note-muted" },
+        { "include": "#note-backtick_first-note-active" },
+        { "include": "#note-backtick_subsequent-notes-muted" },
+        { "include": "#note-backtick_subsequent-notes-active" },
         { "include": "#rest" },
         { "include": "#repeater-dash" },
         { "include": "#repeater-dot" },
@@ -178,6 +183,32 @@
         "rhythm-dots": {
             "name": "keyword.other.rhythm-dots.orfeo",
             "match": "(?<=^|[\\s()\\\\^]),+(?=[\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "note-backtick_backtick-before-note": {
+            "name": "comment.line.number-sign.note.backtick-before-note.orfeo",
+            "match": "(?<=^|[\\s()\\\\^,\\d./])`(?=[^\\s()])"
+        },
+        "note-backtick_first-note-muted": {
+            "name": "comment.line.number-sign.data.note.muted.orfeo",
+            "match": "(?<=(^|[\\s()])\\\\[\\^,\\d./]*`)[^\\s\\\\()]+(?=[\\s\\\\()]|$)"
+        },
+        "note-backtick_first-note-active": {
+            "name": "string.unquoted.data.note.orfeo",
+            "match": "(?<=(^|[\\s()^,\\d./])`)[^\\s\\\\()]+(?=[\\s\\\\()]|$)"
+        },
+        "note-backtick_subsequent-notes-muted": {
+            "match": "(?<=(^|[\\s()\\\\^,\\d\\./])`[^\\s()]*)(\\\\{2}*\\\\)(?!\\\\)([^\\\\]*)(?=[\\s\\\\()]|$)",
+            "captures": {
+                "2": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
+                "3": { "name": "comment.line.number-sign.data.note.muted.orfeo" }
+            }
+        },
+        "note-backtick_subsequent-notes-active": {
+            "match": "(?<=(^|[\\s()\\\\^,\\d\\./])`[^\\s()]*)(\\\\{2}+)(?!\\\\)([^\\\\]*)(?=[\\s\\\\()]|$)",
+            "captures": {
+                "2": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
+                "3": { "name": "string.unquoted.data.note.orfeo" }
+            }
         },
         "rest": {
             "name": "constant.character.rest.orfeo",
