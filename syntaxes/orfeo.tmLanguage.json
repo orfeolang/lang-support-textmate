@@ -10,9 +10,10 @@
         { "include": "#comment_line" },
         { "include": "#comment_atomic" },
         { "include": "#music-expression-duration" },
-        { "include": "#duration" },
+        { "include": "#muting-backslash" },
         { "include": "#rhythm-flags" },
         { "include": "#rhythm-dots" },
+        { "include": "#duration" },
         { "include": "#note-backtick_backtick-before-note" },
         { "include": "#note-backtick_first-note-muted" },
         { "include": "#note-backtick_first-note-active" },
@@ -172,9 +173,9 @@
             "name": "variable.other.music-expression-duration.orfeo",
             "match": "(?<=^|[\\s()|])=(flex|f|(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?)(?=[\\s()]|$)"
         },
-        "duration": {
-            "name": "constant.numeric.duration.orfeo",
-            "match": "(?<=^|[\\s()\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        "muting-backslash": {
+            "name": "keyword.other.muting-backslash.orfeo",
+            "match": "(?<=^|[\\s()])\\\\(?=[\\^,\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+])"
         },
         "rhythm-flags": {
             "name": "keyword.other.rhythm-flags.orfeo",
@@ -183,6 +184,10 @@
         "rhythm-dots": {
             "name": "keyword.other.rhythm-dots.orfeo",
             "match": "(?<=^|[\\s()\\\\^]),+(?=[\\d(<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "duration": {
+            "name": "constant.numeric.duration.orfeo",
+            "match": "(?<=^|[\\s()\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
         },
         "note-backtick_backtick-before-note": {
             "name": "comment.line.number-sign.note.backtick-before-note.orfeo",
