@@ -243,6 +243,57 @@ note =flex note
 \^^^,,,.4/4.4`first-off\\on\off\\\\
 
     # ----------------------------------------------------------------
+    # Note container
+
+<abc>
+<abc😎.9>
+
+    <abc>    
+(<abc>)
+()<abc>()
+\<abc>
+^^^<abc>
+,,,<abc>
+.4<abc>
+4<abc>
+4.5<abc>
+4.5/4.5<abc>
+
+<\\on>
+<\off>
+<\\on\off\\on\\on\off\off>
+<\off\\on\off\off\\on\\on>
+<\\\off\\\\on\\\\\off\\\\\\on\>
+<\\\\on\\\\\off\\\\\\on\\\\\\\off\>
+
+<first-on\off\\on>
+^^^<first-on\off\\on>
+,,,<first-on\off\\on>
+4<first-on\off\\on\>
+4/4<first-on\off\\on\\>
+.4/4.4<first-on\off\\on\\\>
+^^^,,,.4/4.4<first-on\off\\on\\\\>
+
+\<first-off\\on\off>
+\^^^<first-off\\on\off>
+\,,,<first-off\\on\off>
+\4<first-off\\on\off\>
+\4/4<first-off\\on\off\\>
+\.4/4.4<first-off\\on\off\\\>
+\^^^,,,.4/4.4<first-off\\on\off\\\\>
+
+<
+    on by default
+    \ back off
+    \\ on again
+>
+
+\<
+    off by default
+    \\ back on
+    \ off agaia >
+
+    # ----------------------------------------------------------------
     # Rest.
 
 _ _ _

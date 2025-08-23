@@ -19,6 +19,8 @@
         { "include": "#note-backtick_first-note-active" },
         { "include": "#note-backtick_subsequent-notes-muted" },
         { "include": "#note-backtick_subsequent-notes-active" },
+        { "include": "#note-container_muted"},
+        { "include": "#note-container_active"},
         { "include": "#rest" },
         { "include": "#repeater-dash" },
         { "include": "#repeater-dot" },
@@ -214,6 +216,48 @@
                 "2": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
                 "3": { "name": "string.unquoted.data.note.orfeo" }
             }
+        },
+        "_note-container_content-muted": {
+            "match": "(?<=[^\\\\]*)(\\\\{2}*\\\\)(?!\\\\)([^\\\\>]*)(?=[\\s\\\\>])",
+            "captures": {
+                "1": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
+                "2": { "name": "comment.line.number-sign.data.note.muted.orfeo" }
+            }
+        },
+        "_note-container_content-active": {
+            "match": "(?<=[^\\\\]*)(\\\\{2}+)(?!\\\\)([^\\\\>]*)(?=[\\s\\\\>])",
+            "captures": {
+                "1": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
+                "2": { "name": "string.unquoted.data.note.orfeo" }
+            }
+        },
+        "note-container_muted": {
+            "name": "constant.character.note.container.bracket.orfeo",
+            "contentName": "comment.line.number-sign.data.note.muted.orfeo",
+            "begin": "(?<=(^|[\\s()])\\\\[\\^,\\d\\./]*)<",
+            "end": ">",
+            "patterns": [
+                {
+                    "include": "#_note-container_content-muted"
+                },
+                {
+                    "include": "#_note-container_content-active"
+                }
+            ]
+        },
+        "note-container_active": {
+            "name": "constant.character.note.container.bracket.orfeo",
+            "contentName": "string.unquoted.data.note.orfeo",
+            "begin": "(?<=^|[\\s()^,\\d\\./])<",
+            "end": ">",
+            "patterns": [
+                {
+                    "include": "#_note-container_content-muted"
+                },
+                {
+                    "include": "#_note-container_content-active"
+                }
+            ]
         },
         "rest": {
             "name": "constant.character.rest.orfeo",
