@@ -203,6 +203,36 @@ note =flex note
 (),,,a()
 
     # ----------------------------------------------------------------
+    # Note.
+
+    # Various possibilities.
+
+    # Alone
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+á é í ó ú â ê î ô û à è ù ë ï ü ç ñ
+Á É Í Ó Ú Â Ê Î Ô Û À È Ù Ë Ï Ü Ç Ñ
+᭡ ᭢ ᭣ ᭤ ᭥ ᭦ ᭧ ᭨ ᭩ ᭪
+᭴ ᭵ ᭶ ᭷ ᭸ ᭹ ᭺ ᭻ ᭼
+
+\a \^^^b \^^^,,,c \^^^,,,4.4d
+
+    # Combinations.
+
+♮a ♭b ♯c
+a♮ b♭ c♯
+-a
+¡what!
+¿Est-ce_vrai?
++a
+a-b+c
+F/A
+John's
+Georges'
+-_1234567890.1234567890
+sound/vol-12.3/rev-0.9
+
+    # ----------------------------------------------------------------
     # Note backtick.
 
 `abc

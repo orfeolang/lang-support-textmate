@@ -14,6 +14,8 @@
         { "include": "#rhythm-flags" },
         { "include": "#rhythm-dots" },
         { "include": "#duration" },
+        { "include": "#note-alone-muted" },
+        { "include": "#note-alone" },
         { "include": "#note-backtick_backtick-before-note" },
         { "include": "#note-backtick_first-note-muted" },
         { "include": "#note-backtick_first-note-active" },
@@ -190,6 +192,14 @@
         "duration": {
             "name": "constant.numeric.duration.orfeo",
             "match": "(?<=^|[\\s()\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
+        },
+        "note-alone-muted": {
+            "name": "comment.line.number-sign.data.note.muted.orfeo",
+            "match": "(?<=(^|[\\s()])\\\\[\\^,\\d./]*)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼](?=[\\s()]|$)"
+        },
+        "note-alone": {
+            "name": "string.unquoted.data.note.orfeo",
+            "match": "(?<=^|[\\s()^,\\d./])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼](?=[\\s()]|$)"
         },
         "note-backtick_backtick-before-note": {
             "name": "comment.line.number-sign.note.backtick-before-note.orfeo",
