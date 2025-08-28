@@ -14,12 +14,18 @@
         { "include": "#rhythm-flags" },
         { "include": "#rhythm-dots" },
         { "include": "#duration" },
-        { "include": "#note-first-muted" },
-        { "include": "#note-first" },
-        { "include": "#note-body-muted" },
-        { "include": "#note-body" },
         { "include": "#note-alone-muted" },
-        { "include": "#note-alone" },
+        { "include": "#note-alone-active" },
+        { "include": "#note-first-muted" },
+        { "include": "#note-first-active" },
+
+
+        { "include": "#_abc-muted" },
+        { "include": "#_abc-active" },
+        { "include": "#_note-body-muted" },
+        { "include": "#_note-body" },
+
+
         { "include": "#note-backtick_backtick-before-note" },
         { "include": "#note-backtick_first-note-muted" },
         { "include": "#note-backtick_first-note-active" },
@@ -197,14 +203,24 @@
             "name": "constant.numeric.duration.orfeo",
             "match": "(?<=^|[\\s()\\\\^,])(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(/(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?))?(?=[<`.a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+_])"
         },
+        "note-alone-muted": {
+            "name": "comment.line.number-sign.data.note.muted.orfeo",
+            "match": "(?<=(^|[\\s()])\\\\[\\^,]*([\\d/.]*\\d)?)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼](?=[\\s()]|$)"
+        },
+        "note-alone-active": {
+            "name": "string.unquoted.data.note.orfeo",
+            "match": "(?<=(^|[\\s()])[\\^,]*([\\d/.]*\\d)?)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼](?=[\\s()]|$)"
+        },
         "note-first-muted": {
             "name": "comment.line.number-sign.data.note.muted.orfeo",
-            "match": "(?<=(^|[\\s()])\\\\[\\^,\\d./]*)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+](?=[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9])"
+            "match": "(?<=(^|[\\s()])\\\\[\\^,]*([\\d/.]*\\d)?)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+](?=\\\\|[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9])"
         },
-        "note-first": {
+        "note-first-active": {
             "name": "string.unquoted.data.note.orfeo",
-            "match": "(?<=^|[\\s()^,\\d./])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+](?=[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9])"
+            "match": "(?<=(^|[\\s()])[\\^,]*([\\d/.]*\\d)?)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+](?=\\\\|[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9])"
         },
+
+
         "note-body-muted": {
             "name": "comment.line.number-sign.data.note.muted.orfeo",
             "match": "(?<=(^|[\\s()])\\\\[\\^,\\d./]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]+[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-'!?._0-9]?(?=[\\s()\\\\]|$)"
@@ -213,14 +229,21 @@
             "name": "string.unquoted.data.note.orfeo",
             "match": "(?<=(^|[\\s()^,\\d./])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]+[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-'!?._0-9]?(?=[\\s()\\\\]|$)"
         },
-        "note-alone-muted": {
-            "name": "comment.line.number-sign.data.note.muted.orfeo",
-            "match": "(?<=(^|[\\s()])\\\\[\\^,\\d./]*)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼](?=[\\s()]|$)"
+        "abc-muted": {
+            "match": "(?<=(^|[\\s()])\\\\[\\^,\\d./]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+][^\\s()]*)(\\\\{2}*\\\\)(?!\\\\)([a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-'!?._0-9]?)(?=[\\s\\\\()]|$)",
+            "captures": {
+                "2": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
+                "3": { "name": "comment.line.number-sign.data.note.muted.orfeo" }
+            }
         },
-        "note-alone": {
-            "name": "string.unquoted.data.note.orfeo",
-            "match": "(?<=^|[\\s()^,\\d./])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼](?=[\\s()]|$)"
+        "abc-active": {
+            "match": "(?<=(^|[\\s()^,\\d./])[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+][^\\s()]*)(\\\\{2}+)(?!\\\\)([a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-'!?._0-9]?)(?=[\\s\\\\()]|$)",
+            "captures": {
+                "2": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
+                "3": { "name": "string.unquoted.data.note.orfeo" }
+            }
         },
+
         "note-backtick_backtick-before-note": {
             "name": "comment.line.number-sign.note.backtick-before-note.orfeo",
             "match": "(?<=^|[\\s()\\\\^,\\d./])`(?=[^\\s()])"

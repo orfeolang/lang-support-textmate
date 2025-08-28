@@ -215,7 +215,26 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 ᭡ ᭢ ᭣ ᭤ ᭥ ᭦ ᭧ ᭨ ᭩ ᭪
 ᭴ ᭵ ᭶ ᭷ ᭸ ᭹ ᭺ ᭻ ᭼
 
-\a \^^^b \^^^,,,c \^^^,,,4.4d
+a ^^^b ^^^,,,c 4d  4.4d 4.4/4.4d ^^,.5f
+\a \^^^b \^^^,,,c \4d  \4.4f  \4.4/4.4h
+
+^^^,,,a
+
+
+
+    # Partials.
+
+,,,^^^a
+,,,^^^4a
+
+4.d
+4.4/d
+
+\4.e
+\4/g # This is right!
+
+
+
 
     # Combinations.
 
@@ -233,6 +252,34 @@ Georges'
 sound/vol-12.3/rev-0.9
 
 \note
+
+
+\note
+\^^^,,,note
+\note
+\^^^,,,note
+
+
+\^^^,,,a\\on\off\\\\on\\\\\off          # What about a \ just before the a??? Does Orfeo allow that... test test test
+
+
+# Why doesn't this work????
+
+
+\a\\on\off\\\\on\\\\\off                    # 1) Fix this...
+\^a\\on\off\\\\on\\\\\off
+\,,,a\\on\off\\\\on\\\\\off
+\^,,,a\\on\off\\\\on\\\\\off
+\4/4a\\on\off\\\\on\\\\\off
+
+
+
+a\\on\off\\\\on\\\\\off
+^a\\on\off\\\\on\\\\\off
+,,,a\\on\off\\\\on\\\\\off
+^,,,a\\on\off\\\\on\\\\\off
+4/4a\\on\off\\\\on\\\\\off
+
 
     # ----------------------------------------------------------------
     # Note backtick.
