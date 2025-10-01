@@ -27,6 +27,7 @@
         { "include": "#note-backtick_backtick-before-note" },
         { "include": "#note-backtick_first-note-muted" },
         { "include": "#note-backtick_first-note-active" },
+        { "include": "#note-last-muted-muted" },
         { "include": "#note-backtick_subsequent-notes-muted" },
         { "include": "#note-backtick_subsequent-notes-active" },
         { "include": "#note-container_muted"},
@@ -257,6 +258,13 @@
             "captures": {
                 "4": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
                 "5": { "name": "string.unquoted.data.note.orfeo" }
+            }
+        },
+        "note-last-muted-muted": {
+            "match": "(?<=(^|[\\s()])\\\\[\\^,]*([\\d/.]*\\d)?[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-¡¿+]((\\\\*[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]+)+((\\\\{2}*\\\\)[a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-+/'._0-9]+)?))(\\\\{2}*\\\\)?(?!\\\\)([a-zA-ZáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèùÀÈÙëïüËÏÜçÇñÑ᭡᭢᭣᭤᭥᭦᭧᭨᭩᭪᭴᭵᭶᭷᭸᭹᭺᭻᭼♮♭♯\\-'!?._0-9])(?=[\\s()]|$)",
+            "captures": {
+                "7": { "name": "comment.line.number-sign.note.muting-backslash.orfeo" },
+                "8": { "name": "comment.line.number-sign.data.note.muted.orfeo" }
             }
         },
         "note-backtick_backtick-before-note": {
