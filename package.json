@@ -13,32 +13,32 @@
   "contributes": {
     "languages": [
       {
-        "id": "Musicline",
+        "id": "musicline",
         "extensions": [".musicline"]
       },
       {
-        "id": "Orfeo",
+        "id": "orfeo",
         "extensions": [".orfeo"],
         "configuration": "./vscode/orfeo.language-configuration.json"
       },
       {
-        "id": "OrfeoError",
+        "id": "orfeoError",
         "extensions": [".orfeoerror"]
       }
     ],
     "grammars": [
       {
-        "language": "Musicline",
+        "language": "musicline",
         "scopeName": "source.musicline",
         "path": "./syntaxes/musicline.tmLanguage.json"
       },
       {
-        "language": "Orfeo",
+        "language": "orfeo",
         "scopeName": "source.orfeo",
         "path": "./syntaxes/orfeo.tmLanguage.json"
       },
       {
-        "language": "OrfeoError",
+        "language": "orfeoError",
         "scopeName": "source.orfeoerror",
         "path": "./syntaxes/orfeoerror.tmLanguage.json"
       }
