@@ -27,8 +27,14 @@ The block comment opened at 1:6 is not closed.
 
 ===OOPS!=== Error at 12:3
 12➤ ( ⏏@ )
+10➤ ( ⏏@ )
+12➤ note ⭢<abc
 Empty marker.
 You must write a marker name after the marker sigil ｢@｣.
+
+    # With a header alone on its line --------------------------------
+
+===OOPS!===
 
 # --------------------------------------------------------------------
 #  Failers.
@@ -51,3 +57,4 @@ text ===OOPS!=== Header after text.
 Message mentioning ⏏ and ⭢ icons.
   1➤ ( ⏏@ )
 01➤ note ⭢<abc
+01➤ ( ⏏@ )

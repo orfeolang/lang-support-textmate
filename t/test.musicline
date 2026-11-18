@@ -99,6 +99,7 @@
     0   0     marker    marker    
 123.456 10    metro 90    
     789.012 10_10 metro    90.5
+0 1 metro .5
 1.2     1     note F♭/D♯
 1.2     1     note   F♭/D♯    
 1.2     1     note   More than one word.    
@@ -167,12 +168,20 @@
 
     # Bad voice is uncolored.
 0 1.1.1 rest
+0 1_01 rest
 
     # Unknown type is uncolored.
 0 0_0 unknown-type
+0 1 notes
+0 1 rested
+0 1 tails
+0 1 markers
+0 1 metros
 
     # Bad marker data is uncolored.
 0 1 marker @bad-marker-data
+0 1 marker abc.
+0 1 marker abc@
 
     # Extra marker words are uncolored.
 0 1 marker marker-data-word extra-marker-data-word
@@ -225,6 +234,7 @@ hello world
 01 `hello
 01 \ muted
 abc \\ on
+hello # world
 
     # ----------------------------------------------------------------
     # Event voice.
@@ -246,3 +256,10 @@ abc \\ on
     # Fails if not a valid event type.
 00 1.1 unknown
 00 1.1 1
+
+    # Fails if the voice does not start with a digit.
+hello world note
+hello world rest
+hello world tail
+hello world marker
+hello world metro

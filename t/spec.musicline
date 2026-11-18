@@ -1,0 +1,507 @@
+# Musicline grammar spec.
+#
+# Each line of Musicline is followed by its expected colors, one letter
+# per character. Spaces line up with the spaces in the line above.
+#
+#   T  time                 A  active note
+#   V  voice                M  muted note
+#   K  event type           B  muting backslash
+#   R  marker data          G  backtick before a note
+#   N  metro data           C  comment
+#   .  must stay uncolored
+#
+# This block, down to the first blank line, is not tested.
+
+# Musicline Syntax Highlighter Tests
+C CCCCCCCCC CCCCCC CCCCCCCCCCC CCCCC
+# v0.2.0
+C CCCCCC
+# Copyright 2024 Pierre-Emmanuel Lévesque
+C CCCCCCCCC CCCC CCCCCCCCCCCCCCC CCCCCCCC
+
+# --------------------------------------------------------------------
+C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+#  Passers.
+C  CCCCCCCC
+#  Everything below must be colored.
+C  CCCCCCCCCC CCCCC CCCC CC CCCCCCCC
+# --------------------------------------------------------------------
+C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+######################################################################
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+#This is a comment.
+CCCCC CC C CCCCCCCC
+#    This is a comment.
+C    CCCC CC C CCCCCCCC
+    #This is a comment.
+    CCCCC CC C CCCCCCCC
+    #    This is a comment.
+    C    CCCC CC C CCCCCCCC
+
+######################################################################
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+# Musicline short format. (time, note data)
+C CCCCCCCCC CCCCC CCCCCCC CCCCCC CCCC CCCCC
+
+    # Base.
+    C CCCCC
+0
+T
+1.2
+TTT
+.34    
+TTT
+    1234567890.1234567890    
+    TTTTTTTTTTTTTTTTTTTTT
+5 note
+T AAAA
+    6.7 F♭/D♯
+    TTT AAAAA
+    8 Note with many words.
+    T AAAA AAAA AAAA AAAAAA
+	90.12    Note with more than one space before.
+	TTTTT    AAAA AAAA AAAA AAAA AAA AAAAA AAAAAAA
+123.456 Note with more than one space after.    
+TTTTTTT AAAA AAAA AAAA AAAA AAA AAAAA AAAAAA
+789.012    Note with spaces around.    
+TTTTTTT    AAAA AAAA AAAAAA AAAAAAA
+
+    # Single-character notes.
+    C CCCCCCCCCCCCCCCC CCCCCC
+0 C
+T A
+    1.2 a
+    TTT A
+.34    C    
+TTT    A
+0 ♭
+T A
+0 C\off
+T ABMMM
+0 C \ off
+T A B MMM
+0 C\\D
+T ABBA
+0 C \\ D
+T A BB A
+0 C \ off \\ D
+T A B MMM BB A
+
+    # Comment out leading backtick.
+    C CCCCCCC CCC CCCCCCC CCCCCCCCC
+0 `123 backtick note starting with numbers.
+T GAAA AAAAAAAA AAAA AAAAAAAA AAAA AAAAAAAA
+0 `    456 backtick note starting with space then numbers.
+T G    AAA AAAAAAAA AAAA AAAAAAAA AAAA AAAAA AAAA AAAAAAAA
+0   `Backtick note with more than one space before.
+T   GAAAAAAAA AAAA AAAA AAAA AAAA AAA AAAAA AAAAAAA
+0 `Backtick note with more than one space after.    
+T GAAAAAAAA AAAA AAAA AAAA AAAA AAA AAAAA AAAAAA
+0    `    Backtick note with spaces around.    
+T    G    AAAAAAAA AAAA AAAA AAAAAA AAAAAAA
+0 `` Two backticks in a row.
+T GA AAA AAAAAAAAA AA A AAAA
+0 `    `    Two backticks in a row with spaces before.
+T G    A    AAA AAAAAAAAA AA A AAA AAAA AAAAAA AAAAAAA
+
+    # Comment out after one muting backslash.
+    C CCCCCCC CCC CCCCC CCC CCCCCC CCCCCCCCCC
+0 \off
+T BMMM
+0 \ off
+T B MMM
+0    \ off
+T    B MMM
+0    \ off with many words
+T    B MMM MMMM MMMM MMMMM
+0 `\off
+T GBMMM
+0 ` \off
+T G BMMM
+0     ` \ off
+T     G B MMM
+0     ` \ off with many words
+T     G B MMM MMMM MMMM MMMMM
+0 on\off
+T AABMMM
+0 on \ off
+T AA B MMM
+0    on \ off
+T    AA B MMM
+0    on \ off with many words
+T    AA B MMM MMMM MMMM MMMMM
+0 `on\off
+T GAABMMM
+0 ` on \ off
+T G AA B MMM
+0     ` on \ off
+T     G AA B MMM
+0     ` on \ off with many words
+T     G AA B MMM MMMM MMMM MMMMM
+
+    # Alternate commenting with multiple muting backlashes.
+    C CCCCCCCCC CCCCCCCCCC CCCC CCCCCCCC CCCCCC CCCCCCCCCCC
+0 on
+T AA
+0 on \\ on
+T AA BB AA
+0 on\\on \
+T AABBAA B
+0 on \ off
+T AA B MMM
+0 on\off \\
+T AABMMM BB
+0 on \\ on \ off \ off off \\ on on \\ on \ off
+T AA BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 on\\on\off\off\\on\\on\off\\
+T AABBAABMMMBMMMBBAABBAABMMMBB
+0 on \ off \\ on \\ on on \ off off \ off \\ on
+T AA B MMM BB AA BB AA AA B MMM MMM B MMM BB AA
+0 on\off\\on\\on\off\off\\on
+T AABMMMBBAABBAABMMMBMMMBBAA
+0 \ off \\ on \ off \ off off \\ on on \\ on \ off
+T B MMM BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 \off\\on\off\off\\on\\on\off\\
+T BMMMBBAABMMMBMMMBBAABBAABMMMBB
+0 \ off \ off \\ on \\ on on \ off off \ off \\ on
+T B MMM B MMM BB AA BB AA AA B MMM MMM B MMM BB AA
+0 \off\off\\on\\on\off\off\\on
+T BMMMBMMMBBAABBAABMMMBMMMBBAA
+0 `on \\ on \ off \ off off \\ on on \\ on \ off
+T GAA BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 `\ off \\ on \ off \ off off \\ on on \\ on \ off
+T GB MMM BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 on` \\ on \ off \ off off \\ on on \\ on \ off
+T AAA BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 \` off \\ on \ off \ off off \\ on on \\ on \ off
+T BM MMM BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 This is a long text \ this is off \\ and back on
+T AAAA AA A AAAA AAAA B MMMM MM MMM BB AAA AAAA AA
+0 \this is off\\this is on\off again,\\and on...
+T BMMMM MM MMMBBAAAA AA AABMMM MMMMMMBBAAA AAAAA
+
+    # Using more than two muting backslashes in a row.
+    C CCCCC CCCC CCCC CCC CCCCCC CCCCCCCCCCC CC C CCCC
+0 on \\\ off \\\\ on \\\\\ off \\\\\\
+T AA BBB MMM BBBB AA BBBBB MMM BBBBBB
+0 \\\ off \\\\ on \\\\\ off \\\\\\ on
+T BBB MMM BBBB AA BBBBB MMM BBBBBB AA
+
+######################################################################
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+# Musicline long format. (time, voice, type, data)
+C CCCCCCCCC CCCC CCCCCCC CCCCCC CCCCCC CCCCC CCCCC
+
+    # Base.
+    C CCCCC
+0       0     marker _marker's-section-01.02
+T       V     KKKKKK RRRRRRRRRRRRRRRRRRRRRRR
+    0   0     marker    marker    
+    T   V     KKKKKK    RRRRRR
+123.456 10    metro 90    
+TTTTTTT VV    KKKKK NN
+    789.012 10_10 metro    90.5
+    TTTTTTT VVVVV KKKKK    NNNN
+0 1 metro .5
+T V KKKKK NN
+1.2     1     note F♭/D♯
+TTT     V     KKKK AAAAA
+1.2     1     note   F♭/D♯    
+TTT     V     KKKK   AAAAA
+1.2     1     note   More than one word.    
+TTT     V     KKKK   AAAA AAAA AAA AAAAA
+1.2     1     note ` Backtick starts are not ignored.
+TTT     V     KKKK A AAAAAAAA AAAAAA AAA AAA AAAAAAAA
+1.2     1_2_3 note    \muted
+TTT     VVVVV KKKK    BMMMMM
+    3   4     note     \    muted
+    T   V     KKKK     B    MMMMM
+    4   4     note     note \ Partially muted.
+    T   V     KKKK     AAAA B MMMMMMMMM MMMMMM
+    5   4     note    abc\def
+    T   V     KKKK    AAABMMM
+    6   4     note ` abc\Mute when starting with a backtick.
+    T   V     KKKK A AAABMMMM MMMM MMMMMMMM MMMM M MMMMMMMMM
+    7   4     note abc\def\ghi More than one muting backslash.
+    T   V     KKKK AAABMMMBMMM MMMM MMMM MMM MMMMMM MMMMMMMMMM
+    8   4     rest
+    T   V     KKKK
+    9   4     rest    
+    T   V     KKKK
+12.34   5 tail
+TTTTT   V KKKK
+56.78   5 tail    
+TTTTT   V KKKK
+
+    # Comment out after one muting backslash.
+    C CCCCCCC CCC CCCCC CCC CCCCCC CCCCCCCCCC
+0 1 note \off
+T V KKKK BMMM
+0 1 note \ off
+T V KKKK B MMM
+0 1 note    \ off
+T V KKKK    B MMM
+0 1 note    \ off with many words
+T V KKKK    B MMM MMMM MMMM MMMMM
+0 1 note `\off
+T V KKKK ABMMM
+0 1 note ` \off
+T V KKKK A BMMM
+0 1 note     ` \ off
+T V KKKK     A B MMM
+0 1 note     ` \ off with many words
+T V KKKK     A B MMM MMMM MMMM MMMMM
+0 1 note on\off
+T V KKKK AABMMM
+0 1 note on \ off
+T V KKKK AA B MMM
+0 1 note    on \ off
+T V KKKK    AA B MMM
+0 1 note    on \ off with many words
+T V KKKK    AA B MMM MMMM MMMM MMMMM
+0 1 note `on\off
+T V KKKK AAABMMM
+0 1 note ` on \ off
+T V KKKK A AA B MMM
+0 1 note     ` on \ off
+T V KKKK     A AA B MMM
+0 1 note     ` on \ off with many words
+T V KKKK     A AA B MMM MMMM MMMM MMMMM
+
+    # Alternate commenting with multiple muting backlashes.
+    C CCCCCCCCC CCCCCCCCCC CCCC CCCCCCCC CCCCCC CCCCCCCCCCC
+0 1 note on
+T V KKKK AA
+0 1 note on \\ on
+T V KKKK AA BB AA
+0 1 note on\\on \
+T V KKKK AABBAA B
+0 1 note on \ off
+T V KKKK AA B MMM
+0 1 note on\off \\
+T V KKKK AABMMM BB
+0 1 note on \\ on \ off \ off off \\ on on \\ on \ off
+T V KKKK AA BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 1 note on\\on\off\off\\on\\on\off\\
+T V KKKK AABBAABMMMBMMMBBAABBAABMMMBB
+0 1 note on \ off \\ on \\ on on \ off off \ off \\ on
+T V KKKK AA B MMM BB AA BB AA AA B MMM MMM B MMM BB AA
+0 1 note on\off\\on\\on\off\off\\on
+T V KKKK AABMMMBBAABBAABMMMBMMMBBAA
+0 1 note \ off \\ on \ off \ off off \\ on on \\ on \ off
+T V KKKK B MMM BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 1 note \off\\on\off\off\\on\\on\off\\
+T V KKKK BMMMBBAABMMMBMMMBBAABBAABMMMBB
+0 1 note \ off \ off \\ on \\ on on \ off off \ off \\ on
+T V KKKK B MMM B MMM BB AA BB AA AA B MMM MMM B MMM BB AA
+0 1 note \off\off\\on\\on\off\off\\on
+T V KKKK BMMMBMMMBBAABBAABMMMBMMMBBAA
+0 1 note `on \\ on \ off \ off off \\ on on \\ on \ off
+T V KKKK AAA BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 1 note `\ off \\ on \ off \ off off \\ on on \\ on \ off
+T V KKKK AB MMM BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 1 note on` \\ on \ off \ off off \\ on on \\ on \ off
+T V KKKK AAA BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 1 note \` off \\ on \ off \ off off \\ on on \\ on \ off
+T V KKKK BM MMM BB AA B MMM B MMM MMM BB AA AA BB AA B MMM
+0 1 note This is a long text \ this is off \\ and back on
+T V KKKK AAAA AA A AAAA AAAA B MMMM MM MMM BB AAA AAAA AA
+0 1 note \this is off\\this is on\off again,\\and on...
+T V KKKK BMMMM MM MMMBBAAAA AA AABMMM MMMMMMBBAAA AAAAA
+
+    # Using more than two muting backslashes in a row.
+    C CCCCC CCCC CCCC CCC CCCCCC CCCCCCCCCCC CC C CCCC
+0 1 note on \\\ off \\\\ on \\\\\ off \\\\\\
+T V KKKK AA BBB MMM BBBB AA BBBBB MMM BBBBBB
+0 1 note \\\ off \\\\ on \\\\\ off \\\\\\ on
+T V KKKK BBB MMM BBBB AA BBBBB MMM BBBBBB AA
+
+# --------------------------------------------------------------------
+C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+#  Partials.
+C  CCCCCCCCC
+#  Partially colored.
+C  CCCCCCCCC CCCCCCCC
+# --------------------------------------------------------------------
+C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+    # Bad time is uncolored.
+    C CCC CCCC CC CCCCCCCCCC
+01 0_0 rest
+.. VVV KKKK
+
+    # Bad voice is uncolored.
+    C CCC CCCCC CC CCCCCCCCCC
+0 1.1.1 rest
+T ..... KKKK
+0 1_01 rest
+T .... KKKK
+
+    # Unknown type is uncolored.
+    C CCCCCCC CCCC CC CCCCCCCCCC
+0 0_0 unknown-type
+T VVV ............
+0 1 notes
+T V .....
+0 1 rested
+T V ......
+0 1 tails
+T V .....
+0 1 markers
+T V .......
+0 1 metros
+T V ......
+
+    # Bad marker data is uncolored.
+    C CCC CCCCCC CCCC CC CCCCCCCCCC
+0 1 marker @bad-marker-data
+T V KKKKKK ................
+0 1 marker abc.
+T V KKKKKK ....
+0 1 marker abc@
+T V KKKKKK ....
+
+    # Extra marker words are uncolored.
+    C CCCCC CCCCCC CCCCC CCC CCCCCCCCCC
+0 1 marker marker-data-word extra-marker-data-word
+T V KKKKKK RRRRRRRRRRRRRRRR ......................
+
+    # Bad metro data is uncolored.
+    C CCC CCCCC CCCC CC CCCCCCCCCC
+0 1 metro bad-metro-data
+T V KKKKK ..............
+0 1 metro 01
+T V KKKKK ..
+0 1 metro 01.1
+T V KKKKK ....
+0 1 metro 90.
+T V KKKKK ...
+
+    # Useless data on dataless types is uncolored.
+    C CCCCCCC CCCC CC CCCCCCCC CCCCC CC CCCCCCCCCC
+0 1 rest useless-data
+T V KKKK ............
+0 1 tail useless-data
+T V KKKK ............
+
+    # Muting on non-note types is uncolored.
+    C CCCCCC CC CCCCCCCC CCCCC CC CCCCCCCCCC
+0 1 rest \ muted
+T V KKKK . .....
+0 1 tail \\ on
+T V KKKK .. ..
+0 1 marker marker-data \ muted
+T V KKKKKK RRRRRRRRRRR . .....
+0 1 metro 90 \ muted
+T V KKKKK NN . .....
+0 1 unknown-type \ muted
+T V ............ . .....
+0 1 unknown-type \\ on
+T V ............ .. ..
+
+    # Short format data starting with a number needs a backtick.
+    C CCCCC CCCCCC CCCC CCCCCCCC CCCC C CCCCCC CCCCC C CCCCCCCCC
+0 12\off
+T ......
+0 1.5 text
+T ... ....
+
+# --------------------------------------------------------------------
+C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+#  Failers.
+C  CCCCCCCC
+#  Everything below must be uncolored.
+C  CCCCCCCCCC CCCCC CCCC CC CCCCCCCCCC
+# --------------------------------------------------------------------
+C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+    # ----------------------------------------------------------------
+    C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+    # Event time.
+    C CCCCC CCCCC
+
+    # Fails with a leading zero.
+    C CCCCC CCCC C CCCCCCC CCCCC
+01
+..
+01.5
+....
+
+    # Fails with a float missing its fractional-part.
+    C CCCCC CCCC C CCCCC CCCCCCC CCC CCCCCCCCCCCCCCCC
+4.
+..
+
+    # Fails with a negative value.
+    C CCCCC CCCC C CCCCCCCC CCCCCC
+-1
+..
+
+    # Fails with short format data after a bad time.
+    C CCCCC CCCC CCCCC CCCCCC CCCC CCCCC C CCC CCCCC
+01 hello
+.. .....
+-1 hello
+.. .....
+4. hello
+.. .....
+hello world
+..... .....
+01 `hello
+.. ......
+01 \ muted
+.. . .....
+abc \\ on
+... .. ..
+hello # world
+..... . .....
+
+    # ----------------------------------------------------------------
+    C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+    # Event voice.
+    C CCCCC CCCCCC
+
+    # Fails with a leading zero.
+    C CCCCC CCCC C CCCCCCC CCCCC
+00 00
+.. ..
+00 01
+.. ..
+
+    # Fails if not an integer, but starts with an integer.
+    C CCCCC CC CCC CC CCCCCCCC CCC CCCCCC CCCC CC CCCCCCCC
+00 1.1
+.. ...
+00 1.1.1
+.. .....
+
+    # Fails with a trailing underscore.
+    C CCCCC CCCC C CCCCCCCC CCCCCCCCCCC
+00 10_10_
+.. ......
+
+    # ----------------------------------------------------------------
+    C CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+    # Event type.
+    C CCCCC CCCCC
+
+    # Fails if not a valid event type.
+    C CCCCC CC CCC C CCCCC CCCCC CCCCC
+00 1.1 unknown
+.. ... .......
+00 1.1 1
+.. ... .
+
+    # Fails if the voice does not start with a digit.
+    C CCCCC CC CCC CCCCC CCCC CCC CCCCC CCCC C CCCCCC
+hello world note
+..... ..... ....
+hello world rest
+..... ..... ....
+hello world tail
+..... ..... ....
+hello world marker
+..... ..... ......
+hello world metro
+..... ..... .....
