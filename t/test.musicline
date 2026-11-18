@@ -14,7 +14,7 @@
     #    This is a comment.
 
 ######################################################################
-# Musicline short format. (point, note data)
+# Musicline short format. (time, note data)
 
     # Base.
 0
@@ -92,7 +92,7 @@
 0 \\\ off \\\\ on \\\\\ off \\\\\\ on
 
 ######################################################################
-# Musicline long format. (point, voice, type, data)
+# Musicline long format. (time, voice, type, data)
 
     # Base.
 0       0     marker _marker's-section-01.02
@@ -162,7 +162,7 @@
 #  Partially colored.
 # --------------------------------------------------------------------
 
-    # Bad point is uncolored.
+    # Bad time is uncolored.
 01 0_0 rest
 
     # Bad voice is uncolored.
@@ -205,7 +205,7 @@
 # --------------------------------------------------------------------
 
     # ----------------------------------------------------------------
-    # Event point.
+    # Event time.
 
     # Fails with a leading zero.
 01
@@ -217,7 +217,7 @@
     # Fails with a negative value.
 -1
 
-    # Fails with short format data after a bad point.
+    # Fails with short format data after a bad time.
 01 hello
 -1 hello
 4. hello

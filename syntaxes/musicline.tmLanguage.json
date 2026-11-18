@@ -5,7 +5,7 @@
     "fileTypes": [ "musicline" ],
     "patterns": [
         { "include": "#comment_line" },
-        { "include": "#point" },
+        { "include": "#time" },
         { "include": "#voice" },
         { "include": "#type_marker"},
         { "include": "#type_metro"},
@@ -28,8 +28,8 @@
             "begin": "(?<=^\\s*)#",
             "end": "(?=$)"
         },
-        "point": {
-            "name": "constant.numeric.point.musicline",
+        "time": {
+            "name": "constant.numeric.time.musicline",
             "match": "(?<=^\\s*)(\\.\\d+|(0|[1-9]\\d*)(\\.\\d+)?)(?=\\s|$)"
         },
         "voice": {
