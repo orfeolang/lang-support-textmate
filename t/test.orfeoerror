@@ -22,3 +22,32 @@ The note container opened at 1:6 is not closed.
 1➤ note ⭢#(
 Unexpected end of file.
 The block comment opened at 1:6 is not closed.
+
+    # With a multi-digit line number ---------------------------------
+
+===OOPS!=== Error at 12:3
+12➤ ( ⏏@ )
+Empty marker.
+You must write a marker name after the marker sigil ｢@｣.
+
+# --------------------------------------------------------------------
+#  Failers.
+#  Everything below must be uncolored.
+# --------------------------------------------------------------------
+
+    # Fails if the header is not alone at the start of the line.
+===OOPS!===extra
+  ===OOPS!=== Indented header.
+text ===OOPS!=== Header after text.
+
+    # Fails with a bad line number.
+  1➤ Indented line number.
+1 ➤ Space before the arrow.
+01➤ Leading zero.
+0➤ Line zero.
+➤ Missing line number.
+
+    # Fails with icons outside of a numbered line.
+Message mentioning ⏏ and ⭢ icons.
+  1➤ ( ⏏@ )
+01➤ note ⭢<abc

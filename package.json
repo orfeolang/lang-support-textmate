@@ -23,7 +23,7 @@
         "configuration": "./vscode/orfeo.language-configuration.json"
       },
       {
-        "id": "orfeoError",
+        "id": "orfeoerror",
         "extensions": [".orfeoerror"]
       }
     ],
@@ -39,7 +39,7 @@
         "path": "./syntaxes/orfeo.tmLanguage.json"
       },
       {
-        "language": "orfeoError",
+        "language": "orfeoerror",
         "scopeName": "source.orfeoerror",
         "path": "./syntaxes/orfeoerror.tmLanguage.json"
       }
