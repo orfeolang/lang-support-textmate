@@ -80,25 +80,25 @@
         },
         "short-form_data_backtick-before-note": {
             "name": "comment.line.number-sign.short-form.data.note.backtick-before-note.musicline",
-            "match": "(?<=^\\s*\\S+\\s+)`"
+            "match": "(?<=^\\s*(?:\\.\\d+|(?:0|[1-9]\\d*)(?:\\.\\d+)?)\\s+)`"
         },
         "short-form_data_note-first-after-backtick": {
             "name": "string.unquoted.data.note.musicline",
-            "match": "(?<=^\\s*\\S+\\s+`\\s*)(\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
+            "match": "(?<=^\\s*(?:\\.\\d+|(?:0|[1-9]\\d*)(?:\\.\\d+)?)\\s+`\\s*)(\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
         },
         "short-form_data_note-first": {
             "name": "string.unquoted.data.note.musicline",
-            "match": "(?<=^\\s*\\S+\\s+)[^\\s\\\\`0-9](\\s*[^\\s\\\\]+)+(?=\\s*(\\\\|$))"
+            "match": "(?<=^\\s*(?:\\.\\d+|(?:0|[1-9]\\d*)(?:\\.\\d+)?)\\s+)[^\\s\\\\`0-9](\\s*[^\\s\\\\]+)*(?=\\s*(\\\\|$))"
         },
         "short-form_data_note-subsequents": {
-            "match": "(?<=^\\s*\\S+\\s+.*)(\\\\{2}+)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
+            "match": "(?<=^\\s*(?:(?:\\.\\d+|(?:0|[1-9]\\d*)(?:\\.\\d+)?)\\s+(?:[^\\s0-9].*)?|\\S+\\s+[0-9]\\S*\\s+note\\s+.*))(\\\\{2}+)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
             "captures": {
                 "1": { "name": "comment.line.number-sign.data.note.muting-backslash.musicline" },
                 "2": { "name": "string.unquoted.data.note.musicline" }
             }
         },
         "short-form_data_note-muted": {
-            "match": "(?<=^\\s*\\S+\\s+.*)(\\\\{2}*\\\\)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
+            "match": "(?<=^\\s*(?:(?:\\.\\d+|(?:0|[1-9]\\d*)(?:\\.\\d+)?)\\s+(?:[^\\s0-9].*)?|\\S+\\s+[0-9]\\S*\\s+note\\s+.*))(\\\\{2}*\\\\)(?!\\\\)((\\s*[^\\s\\\\]+)+)?(?=\\s*(\\\\|$))",
             "captures": {
                 "1": { "name": "comment.line.number-sign.data.note.muting-backslash.musicline" },
                 "2": { "name": "comment.line.number-sign.data.note.muted.musicline" }

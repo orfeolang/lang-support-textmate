@@ -28,6 +28,17 @@
 123.456 Note with more than one space after.    
 789.012    Note with spaces around.    
 
+    # Single-character notes.
+0 C
+    1.2 a
+.34    C    
+0 ♭
+0 C\off
+0 C \ off
+0 C\\D
+0 C \\ D
+0 C \ off \\ D
+
     # Comment out leading backtick.
 0 `123 backtick note starting with numbers.
 0 `    456 backtick note starting with space then numbers.
@@ -176,6 +187,18 @@
 0 1 rest useless-data
 0 1 tail useless-data
 
+    # Muting on non-note types is uncolored.
+0 1 rest \ muted
+0 1 tail \\ on
+0 1 marker marker-data \ muted
+0 1 metro 90 \ muted
+0 1 unknown-type \ muted
+0 1 unknown-type \\ on
+
+    # Short format data starting with a number needs a backtick.
+0 12\off
+0 1.5 text
+
 # --------------------------------------------------------------------
 #  Failers.
 #  Everything below must be uncolored.
@@ -193,6 +216,15 @@
 
     # Fails with a negative value.
 -1
+
+    # Fails with short format data after a bad point.
+01 hello
+-1 hello
+4. hello
+hello world
+01 `hello
+01 \ muted
+abc \\ on
 
     # ----------------------------------------------------------------
     # Event voice.

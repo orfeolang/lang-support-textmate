@@ -14,7 +14,8 @@
     "languages": [
       {
         "id": "musicline",
-        "extensions": [".musicline"]
+        "extensions": [".musicline"],
+        "configuration": "./vscode/musicline.language-configuration.json"
       },
       {
         "id": "orfeo",
